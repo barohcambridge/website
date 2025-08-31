@@ -1,0 +1,9 @@
+baseURL: https://bar-oh.com/
+languageCode: en-gb
+title: Bar -OH
+theme: ananke
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
