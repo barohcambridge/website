@@ -1,0 +1,46 @@
+{{/* Parameters */}}
+{{ $mapId := default "map" .id }}
+{{ $title := default "" .title }}
+{{ $zoom := .zoom }}
+{{ $height := default "420px" .height }}
+{{ $lat := .lat }}
+{{ $lng := .lng }}
+
+{{/* Configuration */}}
+{{ $apiKey := getenv "HUGO_GOOGLE_MAPS_API_KEY" }}
+
+<div id="{{ $mapId }}" style="width:100%;height:{{ $height }};"></div>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key={{ $apiKey }}&loading=async&callback=initMap"
+  async defer></script>
+
+<script>
+  (function init() {
+    const initMap = () => {
+      const pos = { lat: {{ $lat }}, lng: {{ $lng }} };
+      const map = new google.maps.Map(document.getElementById("{{ $mapId }}"), {
+        center: pos,
+        zoom: {{ $zoom }},
+	gestureHandling: "cooperative",
+        mapTypeControl: true,
+        fullscreenControl: false,
+        streetViewControl: true,
+      });
+      const marker = new google.maps.Marker({
+        position: pos,
+        map,
+        title: "{{ $title }}",
+      });
+      const infowindow = new google.maps.InfoWindow({
+        content: `<strong>{{ $title }}</strong>`,
+      });
+      marker.addListener("click", () => infowindow.open({ map, anchor: marker }));
+    };
+
+    if (window.google && window.google.maps)
+      initMap();
+    else
+      window.initMap = initMap;
+  })();
+</script>

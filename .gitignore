@@ -1,2 +1,4 @@
 /public
 /resources
+/secrets
+/.hugo_build.lock
