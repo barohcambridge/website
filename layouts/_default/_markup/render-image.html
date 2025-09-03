@@ -1,0 +1,79 @@
+{{/*
+  Adapted from:
+    https://rb.ax/blog/perfect-image-processing-with-hugo/
+    https://its.mw/posts/hugo-responsive-images/
+*/}}
+
+{{/* Image width break points */}}
+{{- $widths := slice "420" "789" "1019" "1430" "2048" -}}
+
+{{/* Parse Markdown alt text and title */}}
+{{- $alt := .Text -}}
+{{- $label := .Text -}}
+{{- $caption := "" -}}
+{{- if ne .Title "" -}}
+  {{- $caption = .Title | $.Page.RenderString -}}
+  {{- $label = $caption -}}
+{{- end -}}
+
+{{/* Locate source image file */}}
+{{- $image := resources.Get .Destination -}}
+{{- if not $image -}}
+  {{- errorf "Missing image %q" .Destination -}}
+{{- end -}}
+
+{{/* Construct image(s) */}}
+{{- $src := false -}}
+{{- $sizes := false -}}
+{{- $srcsets := false -}}
+{{- $gradient_style := false -}}
+{{- if $image -}}
+  {{- $gradient_colours := $image.Colors -}}
+  {{- $gradient := delimit ($gradient_colours) ", " -}}
+  {{- $gradient_style = print "background:linear-gradient(" $gradient ");" -}}
+  {{- if (or (strings.HasSuffix $image ".gif")
+             (strings.HasSuffix $image ".svg")) -}}
+    {{- $src = $image.RelPermalink -}}
+  {{- else -}}
+    {{- $fallback_image := ($image.Resize (print "789x")) -}}
+    {{- $src = $fallback_image.RelPermalink -}}
+    {{- $sizes = "(min-width: 800px) 50vw, 100vw" -}}
+    {{- $srcsets = slice -}}
+    {{- range $index, $width := $widths -}}
+      {{- if ge $image.Width $width -}}
+        {{- with $image.Resize (print $width "x webp") -}}
+          {{- $srcset := (printf "%s %dw" (urlize .RelPermalink) .Width) -}}
+          {{- $srcsets = $srcsets | append $srcset -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $srcsets = delimit $srcsets "," -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Render image */}}
+<figure role="figure" aria-label="{{- $label | plainify -}}">
+  <div class="image-wrapper"
+    {{ with $gradient_style }}
+       {{ printf "style=%q" $gradient_style | safeHTMLAttr }}
+    {{ end }}>
+    <img
+      alt="{{ $caption | markdownify | plainify }}"
+      title="{{ $label | plainify }}"
+      {{ with $src }}
+        width="{{ $image.Width }}"
+        height="{{ $image.Height }}"
+        src="{{ $src | safeURL }}"
+      {{ end }}
+      {{ with $srcsets }}
+        {{ printf "srcsets=%q" $srcsets | safeHTMLAttr }}
+        sizes="{{ $sizes }}"
+      {{ end }}
+      decoding="async"
+      loading="lazy"
+    />
+  </div>
+  {{ with $caption }}
+    <figcaption>{{ $caption }}</figcaption>
+  {{ end }}
+</figure>
