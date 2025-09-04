@@ -41,4 +41,4 @@ arrive on time, you'll get an extra special treat!)
 
 {{< booking >}}
 
-{{< venuemap >}}
+{{< googlemap >}}

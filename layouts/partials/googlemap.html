@@ -1,0 +1,26 @@
+{{/* Parameters */}}
+{{- $placeId := default .Site.Params.googlemap.placeId .placeId -}}
+{{- $width := default "100%" .width -}}
+{{- $height := default "420px" .height -}}
+{{- $zoom := default 16 .zoom -}}
+
+{{/* Configuration */}}
+{{- $apiKey := getenv "HUGO_GOOGLE_MAPS_API_KEY" -}}
+
+{{/* Render */}}
+{{- $qs := querify (dict
+                    "key" $apiKey
+                    "q" (printf "place_id:%s" $placeId)
+                    "zoom" $zoom) -}}
+{{- $src := printf "https://www.google.com/maps/embed/v1/place?%s" $qs -}}
+<iframe
+  width={{ $width }}
+  height={{ $height }}
+  frameborder="0"
+  style="border:0"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  {{ printf "src=%q" $src | safeHTMLAttr }}
+  allowfullscreen
+  >
+</iframe>

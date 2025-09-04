@@ -12,3 +12,7 @@ image:
 
 disableKinds:
   - "taxonomy"
+
+params:
+  googlemap:
+    placeId: "ChIJD-IsQCBx2EcRMJ0fLH-V-Uw"
