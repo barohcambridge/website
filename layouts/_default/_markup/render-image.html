@@ -25,7 +25,7 @@
 {{/* Construct image(s) */}}
 {{- $src := false -}}
 {{- $sizes := false -}}
-{{- $srcsets := false -}}
+{{- $srcset := false -}}
 {{- $gradient_style := false -}}
 {{- if $image -}}
   {{- $gradient_colours := $image.Colors -}}
@@ -38,16 +38,16 @@
     {{- $fallback_image := ($image.Resize (print "789x")) -}}
     {{- $src = $fallback_image.RelPermalink -}}
     {{- $sizes = "(min-width: 800px) 50vw, 100vw" -}}
-    {{- $srcsets = slice -}}
+    {{- $srcset = slice -}}
     {{- range $index, $width := $widths -}}
       {{- if ge $image.Width $width -}}
         {{- with $image.Resize (print $width "x webp") -}}
-          {{- $srcset := (printf "%s %dw" (urlize .RelPermalink) .Width) -}}
-          {{- $srcsets = $srcsets | append $srcset -}}
+          {{- $srcopt := (printf "%s %dw" (urlize .RelPermalink) .Width) -}}
+          {{- $srcset = $srcset | append $srcopt -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
-    {{- $srcsets = delimit $srcsets "," -}}
+    {{- $srcset = delimit $srcset "," -}}
   {{- end -}}
 {{- end -}}
 
@@ -65,8 +65,8 @@
         height="{{ $image.Height }}"
         src="{{ $src | safeURL }}"
       {{ end }}
-      {{ with $srcsets }}
-        {{ printf "srcsets=%q" $srcsets | safeHTMLAttr }}
+      {{ with $srcset }}
+        {{ printf "srcset=%q" $srcset | safeHTMLAttr }}
         sizes="{{ $sizes }}"
       {{ end }}
       decoding="async"
