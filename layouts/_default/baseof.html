@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    {{ partial "googlefont.html" (slice "Special Elite") }}
+    <link rel="stylesheet"
+	  href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.red.min.css">
+    <link rel="stylesheet" href="/css/bar-oh.css">
+    <title>
+      {{- if .Page.Title -}}
+        {{- .Page.Title -}} | {{- .Site.Title -}}
+      {{- else -}}
+        {{- .Site.Title -}}
+      {{- end -}}
+    </title>
+  </head>
+  <body>
+    {{- block "main" . -}}
+    {{- end -}}
+  </body>
+</html>

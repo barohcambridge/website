@@ -1,0 +1,27 @@
+body {
+    background: linear-gradient(
+	to right,
+	#400000,      /* left edge */
+	black 25%,
+	black 75%,    /* middle */
+	#400000       /* right edge */
+    );
+}
+
+body > main {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+h1,h2,h3 {
+    font-family: "Special Elite", ui-serif, Georgia, "Times New Roman", serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

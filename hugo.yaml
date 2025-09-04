@@ -1,7 +1,6 @@
 baseURL: "https://bar-oh.com/"
 languageCode: "en-gb"
 title: "Bar -OH"
-theme: "ananke"
 
 markup:
   goldmark:
@@ -11,6 +10,5 @@ markup:
 image:
   resampleFilter: "Lanczos"
 
-params:
-  custom_css:
-    - "custom.css"
+disableKinds:
+  - "taxonomy"

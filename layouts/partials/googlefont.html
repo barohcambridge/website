@@ -1,0 +1,9 @@
+{{/* Parameters */}}
+{{- $fonts := . -}}
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{{- range $font := $fonts -}}
+  {{- $qs := querify (dict "family" $font "display" "swap") -}}
+  {{- $href := printf "https://fonts.googleapis.com/css2?%s" $qs -}}
+  <link rel="stylesheet" {{ printf "href=%q" $href | safeHTMLAttr }}>
+{{- end -}}
