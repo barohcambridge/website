@@ -1,0 +1,6 @@
+{{- if eq .Level 1 -}}<header>{{- end -}}
+<h{{ .Level }} id="{{ .Anchor }}"
+  {{- with .Attributes.class }} class="{{ . }}" {{- end }}>
+  {{- .Text -}}
+</h{{ .Level }}>
+{{- if eq .Level 1 -}}</header>{{- end -}}
