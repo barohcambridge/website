@@ -24,7 +24,8 @@ enjoy your dramatically served cocktail.
 ![Bar ‑OH full of people](images/crowd.jpeg)
 
 We are open every night of the week for all your imbibing and gaming
-needs.  We also have regular live music sessions throughout the year.
+needs.  Live music lovers may be lucky enough to be serenaded by our
+in-house band or guest performers.
 
 |                                          |               |
 | :--------------------------------------- | ------------- |
