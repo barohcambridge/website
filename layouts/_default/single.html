@@ -1,5 +1,6 @@
 {{ define "main" }}
 <main>
-  {{ .Content }}
+  {{/* Replace hyphen with non-breaking hyphen in "Bar -OH" and similar */}}
+  {{ .Content | replaceRE `-OH` "‑OH" | safeHTML }}
 </main>
 {{ end }}
