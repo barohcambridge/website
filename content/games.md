@@ -13,8 +13,9 @@ title: 'Games'
 {{% /slideshow %}}
 
 We have a huge number of retro consoles: Wii, N64, GameCube, several
-generations of PlayStation, Xbox 360, a Pac-Man table, and many more.
-Everything we have is free for you to play for as long as you like.
+generations of Sony PlayStation, Xbox 360, a Pac-Man table, and many
+more.  All of our consoles are free for you to play for as long as you
+like.
 
 {{% slideshow %}}
 ![Cards Against Humanity](images/cardsagainsthumanity.jpeg)
@@ -23,9 +24,9 @@ Everything we have is free for you to play for as long as you like.
 ![Dice](images/dice.jpeg)
 {{% /slideshow %}}
 
-We also have plenty of board games dotted around the building that
-you're welcome to grab and play while you drink.  As with the retro
-consoles, everything is free to use so please help yourself!
+We also have plenty of board games dotted around the venue that you're
+welcome to grab and play while you drink.  As with the retro consoles,
+all of our games are free for you to use so please help yourself!
 
 {{% slideshow %}}
 ![Mario Kart](images/mariokart.jpeg)

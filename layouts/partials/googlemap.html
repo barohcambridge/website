@@ -13,14 +13,16 @@
                     "q" (printf "place_id:%s" $placeId)
                     "zoom" $zoom) -}}
 {{- $src := printf "https://www.google.com/maps/embed/v1/place?%s" $qs -}}
-<iframe
-  width={{ $width }}
-  height={{ $height }}
-  frameborder="0"
-  style="border:0"
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade"
-  {{ printf "src=%q" $src | safeHTMLAttr }}
-  allowfullscreen
-  >
-</iframe>
+<div class="map-wrapper">
+  <iframe
+    width={{ $width }}
+    height={{ $height }}
+    frameborder="0"
+    style="border:0"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    {{ printf "src=%q" $src | safeHTMLAttr }}
+    allowfullscreen
+    >
+  </iframe>
+</div>
