@@ -1,6 +1,6 @@
-{{- if eq .Level 1 -}}<header>{{- end -}}
+{{- if ne .Anchor (index .Page.Fragments.Headings 0).ID -}}
 <h{{ .Level }} id="{{ .Anchor }}"
   {{- with .Attributes.class }} class="{{ . }}" {{- end }}>
   {{- .Text -}}
 </h{{ .Level }}>
-{{- if eq .Level 1 -}}</header>{{- end -}}
+{{- end -}}

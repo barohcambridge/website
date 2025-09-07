@@ -1,7 +1,3 @@
----
-title: 'Games'
----
-
 # Games
 
 {{% slideshow %}}

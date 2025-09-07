@@ -1,3 +1,4 @@
+{{- $title := (index .Page.Fragments.Headings 0).Title -}}
 <!doctype html>
 <html lang="en" data-theme="dark">
   <head>
@@ -9,14 +10,14 @@
 	  href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.red.min.css">
     <link rel="stylesheet" href="/css/bar-oh.css">
     <title>
-      {{- if .Page.Title -}}
-        {{- .Page.Title -}} | {{- .Site.Title -}}
-      {{- else -}}
-        {{- .Site.Title -}}
-      {{- end -}}
+      {{- $title -}}
+      {{- if not .Page.IsHome }} | {{ .Site.Title -}}{{- end -}}
     </title>
   </head>
   <body>
+    <header>
+      <h1>{{- $title -}}</h1>
+    </header>
     {{- block "main" . -}}
     {{- end -}}
   </body>
