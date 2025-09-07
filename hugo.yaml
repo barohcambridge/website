@@ -16,3 +16,6 @@ disableKinds:
 params:
   googlemap:
     placeId: "ChIJD-IsQCBx2EcRMJ0fLH-V-Uw"
+  resdiary:
+    siteName: "BarOH"
+    widgetId: "45537"

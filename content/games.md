@@ -37,4 +37,4 @@ be available!).  If you'd like to wander around and try out all the
 different consoles we have, just book yourself in for early in the
 evening and you should be able to explore freely for hours!
 
-{{< booking >}}
+{{< resdiary >}}

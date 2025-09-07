@@ -89,3 +89,11 @@ div.map-wrapper {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
+div.booking-wrapper {
+    box-shadow: 0 0 2rem 0.8rem rgba(0, 0, 255, 0.5);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

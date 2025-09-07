@@ -1,0 +1,16 @@
+{{/* Parameters */}}
+{{- $siteName := default .Site.Params.resdiary.siteName .siteName -}}
+{{- $widgetId := default .Site.Params.resdiary.widgetId .widgetId -}}
+
+{{/* Render */}}
+{{- $src := printf "https://booking.resdiary.com/widget/Standard/%s/%s"
+                   $siteName $widgetId -}}
+<div class="booking-wrapper">
+  <iframe
+    id="rd-widget-frame"
+    style="width: 100%; min-height: 710px;"
+    {{ printf "src=%q" $src | safeHTMLAttr }}
+    frameborder="0"
+    allow="payment *">
+  </iframe>
+</div>
