@@ -8,7 +8,9 @@
     {{ partial "googlefont.html" (slice "Special Elite") }}
     <link rel="stylesheet"
 	  href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.red.min.css">
-    <link rel="stylesheet" href="/css/bar-oh.css">
+    {{- $css := resources.Get "css/bar-oh.css" | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}"
+	  integrity="{{ $css.Data.Integrity }}">
     <title>
       {{- $title -}}
       {{- if not .Page.IsHome }} | {{ .Site.Title -}}{{- end -}}
