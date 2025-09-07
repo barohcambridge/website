@@ -28,13 +28,13 @@ in-house band or guest performers.
 
 |                                          |               |
 | :--------------------------------------- | ------------- |
-| Monday                                   |  16:00-01:00  |
-| Tuesday [Plug and Play](tuesday)         |  16:00-01:00  |
-| Wednesday [Keys with Brian](wednesday)   |  16:00-01:00  |
-| Thursday [-OHpen Mic](thursday)          |  16:00-01:00  |
-| Friday                                   |  16:00-01:00  |
-| Saturday                                 |  16:00-01:00  |
-| Sunday                                   |  16:00-01:00  |
+| Monday                                   |  16:00 ‑ 01:00  |
+| Tuesday [Plug and Play](tuesday)         |  16:00 ‑ 01:00  |
+| Wednesday [Keys with Brian](wednesday)   |  16:00 ‑ 01:00  |
+| Thursday [-OHpen Mic](thursday)          |  16:00 ‑ 01:00  |
+| Friday                                   |  16:00 ‑ 01:00  |
+| Saturday                                 |  16:00 ‑ 01:00  |
+| Sunday                                   |  16:00 ‑ 01:00  |
 
 You're very welcome to just turn up at our door!  But if you'd like to
 guarantee yourself a space, please do make a booking.  (And if you

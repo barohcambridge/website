@@ -68,6 +68,10 @@ p {
     margin-bottom: 2rem;
 }
 
+td > a {
+    white-space: nowrap;
+}
+
 img {
     display: block;
     max-width: 100%;
