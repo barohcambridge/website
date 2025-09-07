@@ -23,55 +23,23 @@
 {{- end -}}
 
 {{/* Construct image(s) */}}
-{{- $src := false -}}
-{{- $sizes := false -}}
-{{- $srcset := false -}}
 {{- $gradient_style := false -}}
 {{- if $image -}}
   {{- $gradient_colours := $image.Colors -}}
   {{- $gradient := delimit ($gradient_colours) ", " -}}
   {{- $gradient_style = print "background:linear-gradient(" $gradient ");" -}}
-  {{- if (or (strings.HasSuffix $image ".gif")
-             (strings.HasSuffix $image ".svg")) -}}
-    {{- $src = $image.RelPermalink -}}
-  {{- else -}}
-    {{- $fallback_image := ($image.Resize (print "789x")) -}}
-    {{- $src = $fallback_image.RelPermalink -}}
-    {{- $sizes = "(min-width: 800px) 50vw, 100vw" -}}
-    {{- $srcset = slice -}}
-    {{- range $index, $width := $widths -}}
-      {{- if ge $image.Width $width -}}
-        {{- with $image.Resize (print $width "x webp") -}}
-          {{- $srcopt := (printf "%s %dw" (urlize .RelPermalink) .Width) -}}
-          {{- $srcset = $srcset | append $srcopt -}}
-        {{- end -}}
-      {{- end -}}
-    {{- end -}}
-    {{- $srcset = delimit $srcset "," -}}
-  {{- end -}}
 {{- end -}}
 
 {{/* Render image */}}
 <figure role="figure" aria-label="{{- $label | plainify -}}">
   <div class="image-wrapper"
     {{ with $gradient_style }}
-       {{ printf "style=%q" $gradient_style | safeHTMLAttr }}
+      {{ printf "style=%q" $gradient_style | safeHTMLAttr }}
     {{ end }}>
-    <img
-      alt="{{ $caption | markdownify | plainify }}"
-      title="{{ $label | plainify }}"
-      {{ with $src }}
-        width="{{ $image.Width }}"
-        height="{{ $image.Height }}"
-        src="{{ $src | safeURL }}"
-      {{ end }}
-      {{ with $srcset }}
-        {{ printf "srcset=%q" $srcset | safeHTMLAttr }}
-        sizes="{{ $sizes }}"
-      {{ end }}
-      decoding="async"
-      loading="lazy"
-    />
+    {{ partial "image.html" (dict
+      "image" $image
+      "alt" $caption
+      "title" $label) }}
   </div>
   {{ with $caption }}
     <figcaption>{{ $caption }}</figcaption>

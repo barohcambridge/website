@@ -1,0 +1,49 @@
+{{/* Parameters */}}
+{{- $image := .image -}}
+{{- $alt := .alt -}}
+{{- $title := .title -}}
+
+{{/* Configuration */}}
+{{- $widths := slice 420 789 1019 1430 2048 -}}
+{{- $fallback_width := 789 -}}
+{{- $sizes := "(min-width: 800px) 50vw, 100vw" -}}
+
+{{/* Construct image(s) */}}
+{{- $src := false -}}
+{{- $srcset := false -}}
+{{- if $image -}}
+  {{- if (or (strings.HasSuffix $image ".gif")
+             (strings.HasSuffix $image ".svg")) -}}
+    {{- $src = $image.RelPermalink -}}
+  {{- else -}}
+    {{- $fallback_image := ($image.Resize (print $fallback_width "x")) -}}
+    {{- $src = $fallback_image.RelPermalink -}}
+    {{- $srcset = slice -}}
+    {{- range $index, $width := $widths -}}
+      {{- if ge $image.Width $width -}}
+        {{- with $image.Resize (print $width "x webp") -}}
+          {{- $srcopt := (printf "%s %dw" (urlize .RelPermalink) .Width) -}}
+          {{- $srcset = $srcset | append $srcopt -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $srcset = delimit $srcset "," -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Render image */}}
+<img
+  alt="{{ $alt | markdownify | plainify }}"
+  title="{{ $title | plainify }}"
+  {{ with $src }}
+    width="{{ $image.Width }}"
+    height="{{ $image.Height }}"
+    src="{{ $src | safeURL }}"
+  {{ end }}
+  {{ with $srcset }}
+    {{ printf "srcset=%q" $srcset | safeHTMLAttr }}
+    sizes="{{ $sizes }}"
+  {{ end }}
+  decoding="async"
+  loading="lazy"
+/>
