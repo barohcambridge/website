@@ -15,9 +15,7 @@
     </title>
   </head>
   <body>
-    <header>
-      <h1>{{- $title -}}</h1>
-    </header>
+    {{- partial "header.html" . -}}
     {{- block "main" . -}}
     {{- end -}}
   </body>

@@ -12,6 +12,26 @@ body {
     );
 }
 
+body > header {
+    position: relative;
+    max-width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body > header > img {
+    position: absolute;
+    width: 100%;
+    vertical-align: middle;
+}
+
+body > header > h1 {
+    position: relative;
+}
+
 body > main {
     max-width: 60ch;
     margin-left: auto;
