@@ -25,7 +25,15 @@ body > header {
 body > header > img {
     position: absolute;
     width: 100%;
-    vertical-align: middle;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    mask-image: linear-gradient(
+	to bottom,
+	rgba(0,0,0,1),
+	rgba(0,0,0,1) 60%,
+	rgba(0,0,0,0)
+    );
 }
 
 body > header > h1 {
