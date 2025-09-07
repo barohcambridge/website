@@ -42,4 +42,7 @@ arrive on time, you'll get an extra special treat!)
 
 {{< resdiary >}}
 
+You'll find us at 20 Downing Street, next to the entrance of the
+Hilton Hotel.  Hope to see you soon!
+
 {{< googlemap >}}
