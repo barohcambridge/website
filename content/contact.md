@@ -3,14 +3,19 @@
 ## Email
 
 You can email us at enquiries@bar-oh.com.  We try to respond to emails
-within two working days.  For bookings, please use our [instant
-booking](#booking) form instead.
+within two working days.  For instant bookings, please use our
+[booking](#booking) form instead.
 
 ## Phone
 
 You can contact us by telephone during our opening hours on
-[01223&nbsp;319420](tel:+441223319420).  For bookings, please use our
-[instant booking](#booking) form instead.
+[01223&nbsp;319420](tel:+441223319420).  For instant bookings, please
+use our [booking](#booking) form instead.
+
+## Venue hire
+
+For groups of 50 or more people, please take a look at our [venue
+hire](/hire) page.
 
 ## Booking
 
