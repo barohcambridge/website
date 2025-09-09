@@ -4,6 +4,11 @@ title: "Bar -OH"
 
 markup:
   goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
+      wrapStandAloneImageWithinParagraph: false
     renderer:
       unsafe: true
 

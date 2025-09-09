@@ -4,8 +4,12 @@ layout: 'single'
 
 # Bar -OH
 
-**Table service cocktails.  Board games.  Video games.  Occasional
-sharks and robots.**
+* Table service cocktails
+* Board games
+* Video games
+* Robots
+* Occasional sharks
+{.text-rotator}
 
 ![Shark Bite cocktail closeup](images/sharkbite.jpeg)
 
