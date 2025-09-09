@@ -1,5 +1,6 @@
 html {
     font-size: calc(clamp(16px, 1vw + 12px, 24px));
+    scroll-behavior: smooth;
 }
 
 body {
