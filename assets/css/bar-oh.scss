@@ -54,10 +54,10 @@ body > main {
 
 h1,h2,h3 {
     font-family: "Special Elite", ui-serif, Georgia, "Times New Roman", serif;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
     font-size: calc(clamp(3rem, 1vw + 2rem, 6rem));
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -87,6 +87,10 @@ img {
     max-height: 80vh;
     object-fit: cover;
     object-position: center;
+}
+
+figcaption {
+    text-align: center;
 }
 
 table {
