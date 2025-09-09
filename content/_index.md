@@ -22,7 +22,7 @@ them with sharks.
 
 We also have plenty of [retro consoles](games) and [board
 games](games) that are completely free for you to play while you
-enjoy your dramatically served cocktail.
+enjoy your dramatically served cocktails.
 
 ![Bar -OH full of people](images/crowd.jpeg)
 

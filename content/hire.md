@@ -49,14 +49,13 @@ To settle your final bill at the end of the evening, we will need to
 take a card payment, unless you have arranged with us in advance to
 settle the bill via an invoice.
 
-## Do we need welcome drinks?
+## Welcome drinks?
 
-High quality cocktails take time to make, and we refuse to serve low
-quality cocktails!  If you are expecting everyone to arrive en masse
-at the start of the evening, it would be a very good idea to
-prepurchase some bottles of prosecco so that we can offer everyone a
-welcome drink as soon as they arrive.  We can offer a 25% discount for
-any bottles purchased in advance.
+High-quality cocktails take time to make.  If you're expecting
+everyone to arrive en masse at the start of the evening, it would be a
+very good idea to prepurchase some bottles of prosecco so that we can
+offer everyone a welcome drink as soon as they arrive.  We can offer a
+25% discount for any bottles purchased in advance.
 
 ## What about non-drinkers?
 
