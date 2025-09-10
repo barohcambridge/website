@@ -1,8 +1,9 @@
+{{- $contact := .Site.GetPage "/contact" -}}
 <footer>
   <p>
     <small>
       Copyright © 2025
-      <a href="/contact/">Bar Oh Limited</a>.
+      <a href="{{ $contact.RelPermalink }}">Bar Oh Limited</a>.
       All rights reserved.
     </small>
   </p>
