@@ -1,0 +1,98 @@
+name: Build for GitHub Pages
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Setup GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Check out code
+        uses: actions/checkout@v5
+
+      - name: List LFS objects
+        run: |
+          git lfs ls-files -l | cut -d' ' -f1 | sort > .lfscache.hash
+
+      - name: Hash LFS objects
+        id: lfshash
+        run: |
+          hash=${{ hashFiles('.lfscache.hash') }}
+          echo "key=${{ vars.LFS_CACHE_KEY }}-$hash" >> "$GITHUB_OUTPUT"
+
+      - name: Cache LFS objects
+        uses: actions/cache@v4
+        with:
+          path: .git/lfs
+          key: ${{ steps.lfshash.outputs.key }}
+          restore-keys: |
+            ${{ vars.LFS_CACHE_KEY }}-
+
+      - name: Update LFS objects
+        run: |
+          git lfs fetch --prune
+
+      - name: Check out LFS objects
+        run: |
+          git lfs checkout
+
+      - name: Restore cached resources
+        id: hugocache
+        uses: actions/cache/restore@v4
+        with:
+          path: resources
+          key: ${{ vars.HUGO_CACHE_KEY }}-
+          restore-keys: |
+            ${{ vars.HUGO_CACHE_KEY }}-
+
+      - name: Prepare build environment
+        env:
+          HUGODIRS: public resources
+          HUGOGID: 1000
+          HUGOGROUP: hugo
+        run: |
+          mkdir -p $HUGODIRS
+          sudo groupadd -o -g $HUGOGID $HUGOGROUP
+          sudo groupmod -a -U $(id -un) $HUGOGROUP
+          sudo chgrp -R $HUGOGROUP $HUGODIRS
+          sudo chmod -R g+w $HUGODIRS
+          ls -ld $HUGODIRS
+
+      - name: Build
+        uses: docker://ghcr.io/gohugoio/hugo
+        with:
+          args: |
+            build --noBuildLock --noChmod --minify --gc \
+                  --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Hash cached resources
+        id: hugohash
+        run: |
+          hash=${{ hashFiles('resources/**/*') }}
+          echo "key=${{ vars.HUGO_CACHE_KEY }}-$hash" >> "$GITHUB_OUTPUT"
+
+      - name: Save cached resources
+        uses: actions/cache/save@v4
+        if: >-
+          ${{ steps.hugocache.outputs.cache-matched-key !=
+              steps.hugohash.outputs.key }}
+        with:
+          path: resources
+          key: ${{ steps.hugohash.outputs.key }}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
