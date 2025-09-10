@@ -1,0 +1,8 @@
+{{/* Parameters */}}
+{{- $number := .number -}}
+{{- $text := default $number .text -}}
+
+{{/* Render */}}
+<a {{ printf "href=%q" ( print "tel:" $number ) | safeHTMLAttr }}>
+  {{- $text | replaceRE ` ` "&nbsp;" | safeHTML -}}
+</a>
