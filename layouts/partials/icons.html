@@ -1,0 +1,11 @@
+{{/* Parameters */}}
+{{- $icon := .icon -}}
+
+{{/* Construct PNG icons */}}
+{{- range $size := (slice "16" "32" "64" "96" "180") -}}
+  {{- $href := $icon.Resize (print $size "x png") }}
+  <link rel="icon" type="image/png" sizes="{{ $size }}x{{ $size }}"
+        href="{{ $href.RelPermalink }}">
+  <link rel="apple-touch-icon" sizes="{{ $size }}x{{ $size }}"
+	href="{{ $href.RelPermalink }}">
+{{ end -}}

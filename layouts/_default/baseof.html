@@ -11,6 +11,8 @@
     {{- $css := resources.Get "css/bar-oh.scss" | css.Sass | minify | fingerprint -}}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}"
 	  integrity="{{ $css.Data.Integrity }}">
+    {{- $logo := resources.Get "images/logo.png" -}}
+    {{ partial "icons.html" (dict "icon" $logo) }}
     <title>
       {{- $title -}}
       {{- if not .Page.IsHome }} | {{ .Site.Title -}}{{- end -}}
