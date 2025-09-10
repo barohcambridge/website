@@ -5,8 +5,9 @@ layout: 'single'
 # Bar -OH
 
 * Table service cocktails
+* Retro consoles
 * Board games
-* Video games
+* Live music
 * Robots
 * Occasional sharks
 {.text-rotator}
