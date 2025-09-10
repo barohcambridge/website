@@ -73,6 +73,8 @@ jobs:
 
       - name: Build
         uses: docker://ghcr.io/gohugoio/hugo
+        env:
+          HUGO_GOOGLE_MAPS_API_KEY: ${{ secrets.HUGO_GOOGLE_MAPS_API_KEY }}
         with:
           args: |
             build --noBuildLock --noChmod --minify --gc \
