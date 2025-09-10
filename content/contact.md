@@ -15,7 +15,7 @@ use our [booking](#booking) form instead.
 ## Venue hire
 
 For groups of 50 or more people, please take a look at our [venue
-hire](/hire) page.
+hire](hire.md) page.
 
 ## Booking
 
