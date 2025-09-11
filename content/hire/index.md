@@ -14,7 +14,7 @@ your area, so you can enjoy your evening undisturbed.
 ## What do we get?
 
 You'll get free and exclusive use of all of the [retro consoles and
-board games](games.md) in your area for the whole evening.
+board games](../games/index.md) in your area for the whole evening.
 
 You will be right next to our live music stage and you're welcome to
 discuss music options with us, if there's a particular live act you'd

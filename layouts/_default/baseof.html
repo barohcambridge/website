@@ -15,7 +15,7 @@
     {{ partial "icons.html" (dict "icon" $logo) }}
     <title>
       {{- $title -}}
-      {{- if not .Page.IsHome }} | {{ .Site.Title -}}{{- end -}}
+      {{- if ne $title .Site.Title }} | {{ .Site.Title -}}{{- end -}}
     </title>
   </head>
   <body>
