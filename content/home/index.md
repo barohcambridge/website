@@ -22,8 +22,8 @@ decorating them with sharks.
 ![Mario Kart game](images/mariokart.jpeg)
 
 We also have plenty of [retro consoles](../games/index.md) and [board
-games](../games/index.md) that are completely free for you to play while
-you enjoy your dramatically served cocktails.
+games](../games/index.md#boardgames) that are completely free for you
+to play while you enjoy your dramatically served cocktails.
 
 ![Bar -OH full of people](images/crowd.jpeg)
 

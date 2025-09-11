@@ -1,4 +1,5 @@
 {{- if ne .Anchor (index .Page.Fragments.Headings 0).ID -}}
+
 <h{{ .Level }} id="{{ .Anchor }}"
   {{- with .Attributes.class }} class="{{ . }}" {{- end }}>
   {{- .Text -}}
