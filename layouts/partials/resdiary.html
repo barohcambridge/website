@@ -1,16 +1,23 @@
 {{/* Parameters */}}
 {{- $siteName := default .Site.Params.resdiary.siteName .siteName -}}
 {{- $widgetId := default .Site.Params.resdiary.widgetId .widgetId -}}
+{{- $width := default "100%" .width -}}
+{{- $height := default "710px" .height -}}
 
 {{/* Render */}}
 {{- $src := printf "https://booking.resdiary.com/widget/Standard/%s/%s"
                    $siteName $widgetId -}}
 <div class="booking-wrapper">
   <iframe
-    id="rd-widget-frame"
-    style="width: 100%; min-height: 710px;"
-    {{ printf "src=%q" $src | safeHTMLAttr }}
+    width="{{ $width }}"
+    height="{{ $height }}"
+    title="Instant Booking"
     frameborder="0"
-    allow="payment *">
+    style="border:0"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allow="payment *"
+    {{ printf "src=%q" $src | safeHTMLAttr }}
+    >
   </iframe>
 </div>

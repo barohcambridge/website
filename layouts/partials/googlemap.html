@@ -15,8 +15,9 @@
 {{- $src := printf "https://www.google.com/maps/embed/v1/place?%s" $qs -}}
 <div class="map-wrapper">
   <iframe
-    width={{ $width }}
-    height={{ $height }}
+    width="{{ $width }}"
+    height="{{ $height }}"
+    title="Google Map"
     frameborder="0"
     style="border:0"
     loading="lazy"
