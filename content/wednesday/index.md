@@ -6,12 +6,13 @@
 
 On Wednesdays our resident bartender and pianist Bryan takes to the
 stage for our keyboard lounge session, playing whatever takes his
-fancy from Sinatra to Flight of the Conchords.
+fancy, from Sinatra to Flight of the Conchords.
 
 {{< youtube videoId="3pfIYXwAc3k" title="Keys With Brian" >}}
 
-Feel free to challenge Bryan with some requests of your own.  (Be
-prepared to buy him a drink, depending on what you ask for!)
+Feel free to challenge Bryan with some requests of your own.  Bribes
+are not required but may well be appreciated.  Do not ask him to play
+"Baby Shark".
 
 ![Happy customers listening to music](images/snug.jpeg)
 
