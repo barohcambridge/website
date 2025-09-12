@@ -1,0 +1,23 @@
+# Wednesday
+
+## "Keys With Bryan"
+
+![Bryan at the keyboard](images/keyswithbryan.jpeg)
+
+On Wednesdays our resident bartender and pianist Bryan takes to the
+stage for our keyboard lounge session, playing whatever takes his
+fancy from Sinatra to Flight of the Conchords.
+
+{{< youtube videoId="3pfIYXwAc3k" title="Keys With Brian" >}}
+
+Feel free to challenge Bryan with some requests of your own.  (Be
+prepared to buy him a drink, depending on what you ask for!)
+
+![Happy customers listening to music](images/snug.jpeg)
+
+Book yourself a table and come listen to Bryan's creative ambling on
+the keyboard while you enjoy a fabulous few cocktails (possibly also
+made by Bryan).  Or just let the music wash over you while you lose
+yourself playing on some of our [retro consoles](../games/index.md).
+
+{{< resdiary >}}

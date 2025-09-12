@@ -35,7 +35,7 @@ in-house band or guest performers.
 |:---------------------------------------------------|---------------|
 | Monday                                             | 16:00 ‑ 01:00 |
 | Tuesday [Plug and Play](../tuesday/index.md)       | 16:00 ‑ 01:00 |
-| Wednesday [Keys with Brian](../wednesday/index.md) | 16:00 ‑ 01:00 |
+| Wednesday [Keys with Bryan](../wednesday/index.md) | 16:00 ‑ 01:00 |
 | Thursday [-OHpen Mic](../thursday/index.md)        | 16:00 ‑ 01:00 |
 | Friday                                             | 16:00 ‑ 01:00 |
 | Saturday                                           | 16:00 ‑ 01:00 |
