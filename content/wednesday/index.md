@@ -17,8 +17,9 @@ are not required but may well be appreciated.  Do not ask him to play
 ![Happy customers listening to music](images/snug.jpeg)
 
 Book yourself a table and come listen to Bryan's creative ambling on
-the keyboard while you enjoy a fabulous few cocktails (possibly also
-made by Bryan).  Or just let the music wash over you while you lose
-yourself playing on some of our [retro consoles](../games/index.md).
+the keyboard while you enjoy a fabulous few
+[cocktails](../menu/index.md) (possibly also made by Bryan).  Or just
+let the music wash over you while you lose yourself playing on some of
+our [retro consoles](../games/index.md).
 
 {{< resdiary >}}
