@@ -27,6 +27,8 @@ We have a full drum kit and sound system, so there's no need to bring
 your own amps or mics: just turn up with yourself and your instrument
 and we'll sort out the rest.
 
+![Happy customers listening to music](images/snug.jpeg)
+
 Book in and get yourself a great table where you can kick back with a
 [tasty drink](../menu/index.md) and [play some
 games](../games/index.md) in the gaps between the music!
