@@ -24,6 +24,10 @@ sign-up process: just arrive before 20:30 on a Thursday evening and
 let us know what you'd like to perform.  All performers get one free
 cocktail (or beer or glass of wine) and unlimited soft drinks.
 
+We have a full drum kit and sound system, so there's no need to bring
+your own amps or mics: just turn up with yourself and your instrument
+and we'll sort out the rest.
+
 You're welcome to book a table for yourself and your friends, to make
 sure that you get a good spot right up close to the stage.  We look
 forward to seeing you on Thursday!
