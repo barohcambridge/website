@@ -1,0 +1,4 @@
+{{/* Generic partial-wrapping shortcode */}}
+{{- $name := (printf "%s.html" .Name) -}}
+{{- $args := (merge .Params (dict "Page" $.Page "Site" $.Site)) -}}
+{{- partial $name $args -}}

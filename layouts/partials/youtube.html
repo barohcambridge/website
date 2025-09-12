@@ -1,0 +1,23 @@
+{{/* Parameters */}}
+{{- $videoId := .videoId -}}
+{{- $title := default "" .title -}}
+{{- $width := default "100%" .width -}}
+{{- $height := default "100%" .height -}}
+
+{{/* Render */}}
+{{- $src := printf "https://www.youtube.com/embed/%s?rel=0" $videoId -}}
+<div class="video-wrapper">
+  <iframe
+    width="{{ $width }}"
+    height="{{ $height }}"
+    title="{{ $title }}"
+    frameborder="0"
+    style="border:0"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    {{ printf "src=%q" $src | safeHTMLAttr }}
+    allowfullscreen
+    >
+  </iframe>
+</div>
