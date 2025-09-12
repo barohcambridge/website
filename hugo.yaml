@@ -22,6 +22,10 @@ disableKinds:
   - "rss"
   - "taxonomy"
 
+cascade:
+  build:
+    publishResources: false
+
 params:
   googlemap:
     placeId: "ChIJD-IsQCBx2EcRMJ0fLH-V-Uw"
