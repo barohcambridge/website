@@ -48,5 +48,7 @@
   decoding="async"
   {{ if $lazy }}
     loading="lazy"
+  {{ else }}
+    fetchpriority="high"
   {{ end }}
 />
