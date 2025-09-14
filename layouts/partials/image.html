@@ -2,6 +2,7 @@
 {{- $image := .image -}}
 {{- $alt := .alt -}}
 {{- $title := .title -}}
+{{- $lazy := default true .lazy -}}
 
 {{/* Configuration */}}
 {{- $widths := slice 420 789 1019 1430 2048 -}}
@@ -45,5 +46,7 @@
     sizes="{{ $sizes }}"
   {{ end }}
   decoding="async"
-  loading="lazy"
+  {{ if $lazy }}
+    loading="lazy"
+  {{ end }}
 />

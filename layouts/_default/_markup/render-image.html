@@ -39,7 +39,8 @@
     {{ partial "image.html" (dict
       "image" $image
       "alt" $caption
-      "title" $label) }}
+      "title" $label
+      "lazy" (ne .Ordinal 0)) }}
   </div>
   {{ with $caption }}
     <figcaption>{{ $caption }}</figcaption>
