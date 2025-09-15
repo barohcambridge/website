@@ -4,7 +4,7 @@
 
 We specialise in excitingly presented [cocktails](#house) made to our
 own recipes: you can expect swirling smoke, edible [custom-printed
-pictures](../photo/index.md), drinks served in a parrot or a bathtub,
+pictures](../photo/index.md), drinks served in parrots and bathtubs,
 and friendly sharks!
 
 For the more classically minded cocktail connoisseur, we have a great
@@ -15,8 +15,8 @@ Manhattan, or a Pineapple Rum Old Fashioned?  Just say the word.
 
 ![Classic cocktail closeup](images/classic.jpeg)
 
-Not in the mood for a cocktail?  We have [wines](#wine) by the glass
-and by the bottle, along with numerous local craft [beers](#beer).
+Don't feel like a cocktail?  We have [wines](#wine) by the glass and
+by the bottle, along with numerous local craft [beers](#beer).
 
 For drivers and other non-drinkers, we've designed lots of our
 own-recipe cocktails to work well without the alcohol.  Any cocktail
