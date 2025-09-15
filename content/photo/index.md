@@ -3,9 +3,9 @@
 ![Drink printing](images/ripples.jpeg)
 
 Get your face printed on top of your drink!  Or any other picture that
-takes your fancy: a favourite anime character, your startup company
-logo, the most recent cat photo on your phone - go wild with
-imagination!
+takes your fancy.  How about a favourite anime character, or your
+startup company logo, or, of course, the most recent cat photo on your
+phone?
 
 Any picture with high contrast should work well.  Bonus points if your
 picture still works after you take a sip.  (Cats are great for this!)
