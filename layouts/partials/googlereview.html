@@ -1,0 +1,8 @@
+{{/* Parameters */}}
+{{- $text := .text -}}
+{{- $placeId := default .Site.Params.googlemap.placeId .placeId -}}
+
+{{/* Render */}}
+{{- $qs := querify (dict "placeid" $placeId) -}}
+{{- $href := printf "https://search.google.com/local/writereview?%s" $qs -}}
+<a {{ printf "href=%q" $href | safeHTMLAttr }} target="_blank">{{ $text }}</a>
