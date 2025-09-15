@@ -239,3 +239,11 @@ $text-rotator-max: 10;
 	100%  { opacity: 0; }
     }
 }
+
+article.invoice {
+    background-color: gray;
+}
+
+article.invoice .right {
+    text-align: right;
+}
