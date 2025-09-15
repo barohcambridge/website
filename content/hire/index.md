@@ -59,9 +59,9 @@ offer everyone a welcome drink as soon as they arrive.  We can offer a
 
 ## What about non-drinkers?
 
-We have plenty of alcohol-free cocktails on our menu.  Any cocktail
-marked with an asterisk (*) can be made as a low-alcohol or
-no-alcohol version.
+We have plenty of alcohol-free cocktails on our
+[menu](../menu/index.md).  Any cocktail marked with an asterisk (*)
+can be made as a low-alcohol or no-alcohol version.
 
 We also have alcohol-free beer and plenty of soft drink options
 available.
@@ -82,8 +82,9 @@ talk to our bartenders about creating something unique just for you.
 If it turns out really well, we may even keep it on our regular menu!
 
 Maybe you've got a picture you'd love everyone to see?  Send it to us
-in advance and we'll have it available to print on top of every
-espresso martini (or any other drink with a foam top)!
+in advance and we'll have it available to [print on
+top](../photo/index.md) of every espresso martini (or any other drink
+with a foam top)!
 
 ## How do we book?
 
