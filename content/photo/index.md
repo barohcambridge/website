@@ -1,3 +1,9 @@
+---
+aliases:
+  - "photos"
+  - "print"
+---
+
 # Photos
 
 ![Drink printing](images/ripples.jpeg)

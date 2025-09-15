@@ -1,5 +1,6 @@
 ---
-slug: "r"
+aliases:
+  - "r"
 ---
 
 # Reviews

@@ -1,3 +1,8 @@
+---
+aliases:
+  - "pnp"
+---
+
 # Tuesday
 
 ## "Plug & Play"
