@@ -15,7 +15,7 @@ games](../games/index.md).
 
 Great!  The bigger the audience, the more fun for everyone.  Just
 wander along on a Thursday evening, or [book yourself a
-table](#booknow).
+table](#resdiary).
 
 ## I want to play!
 
@@ -30,9 +30,8 @@ and we'll sort out the rest.
 
 ![Happy customers listening to music](images/snug.jpeg)
 
-You're welcome to book a table for yourself and your friends, to make
-sure that you get a good spot right up close to the stage.  We look
-forward to seeing you on Thursday!
-{ #booknow }
+You're welcome to [book a table](#resdiary) for yourself and your
+friends, to make sure that you get a good spot right up close to the
+stage.  We look forward to seeing you on Thursday!
 
 {{< resdiary >}}

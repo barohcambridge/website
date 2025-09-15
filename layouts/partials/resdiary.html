@@ -3,11 +3,12 @@
 {{- $widgetId := default .Site.Params.resdiary.widgetId .widgetId -}}
 {{- $width := default "100%" .width -}}
 {{- $height := default "710px" .height -}}
+{{- $id := default "resdiary" .id -}}
 
 {{/* Render */}}
 {{- $src := printf "https://booking.resdiary.com/widget/Standard/%s/%s"
                    $siteName $widgetId -}}
-<div class="booking-wrapper">
+<div id="{{ $id }}" class="booking-wrapper">
   <iframe
     width="{{ $width }}"
     height="{{ $height }}"

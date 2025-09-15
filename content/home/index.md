@@ -42,8 +42,8 @@ in-house band or guest performers.
 | Sunday                                             | 16:00 ‑ 01:00 |
 
 You're very welcome to just turn up at our door!  But if you'd like to
-guarantee yourself a space, please do make a booking.  (And if you
-arrive on time, you'll get an extra special treat!)
+guarantee yourself a space, please do [make a booking](#resdiary).
+(And if you arrive on time, you'll get an extra special treat!)
 
 {{< resdiary >}}
 

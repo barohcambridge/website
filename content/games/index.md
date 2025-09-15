@@ -41,7 +41,8 @@ to use so please help yourself!
 Most of our tables have at least one retro console, and you're welcome
 to request whichever one you like best (though we can't promise it'll
 be available!).  If you'd like to wander around and try out all the
-different consoles we have, just book yourself in for early in the
-evening and you should be able to explore freely for hours!
+different consoles we have, just [book yourself in](#resdiary) for
+early in the evening and you should be able to explore freely for
+hours!
 
 {{< resdiary >}}

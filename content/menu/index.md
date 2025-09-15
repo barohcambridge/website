@@ -51,7 +51,8 @@ low-alcohol or no-alcohol version.
 
 ![Elements](images/menu/elements.png)
 
-Like what you see here?  Book a table and visit us in person.  We
-promise that the reality will taste even better than your imagination!
+Like what you see here?  [Book a table](#resdiary) and visit us in
+person.  We promise that the reality will taste even better than your
+imagination!
 
 {{< resdiary >}}

@@ -29,8 +29,8 @@ and we'll sort out the rest.
 
 ![Happy customers listening to music](images/snug.jpeg)
 
-Book in and get yourself a great table where you can kick back with a
-[tasty drink](../menu/index.md) and [play some
+[Book in](#resdiary) and get yourself a great table where you can kick
+back with a [tasty drink](../menu/index.md) and [play some
 games](../games/index.md) in the gaps between the music!
 
 {{< resdiary >}}
