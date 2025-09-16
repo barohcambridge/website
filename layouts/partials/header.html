@@ -2,5 +2,6 @@
 <header>
   {{- $image := resources.Get "/images/header.jpeg" -}}
   {{- partial "image.html" (dict "image" $image) -}}
+  <label class="nav-label" for="nav-checkbox">☰</label>
   <h1>{{- $title -}}</h1>
 </header>

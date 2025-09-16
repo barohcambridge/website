@@ -37,7 +37,5 @@ CB2 3DT
 
 {{< googlemap >}}
 
-<small>
 Bar -OH is a trading name of Bar Oh Limited.  Registered in England &
 Wales.  Company registration number 13576539.  VAT number GB389641641.
-</small>

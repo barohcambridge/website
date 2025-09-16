@@ -4,6 +4,44 @@ html {
 }
 
 body {
+    display: grid;
+    grid-template-areas:
+	"nav header"
+	"nav main"
+	"nav footer";
+    grid-template-columns: 10rem 1fr;
+}
+
+#nav-checkbox {
+    display: none;
+}
+
+.nav-label {
+    display: none;
+}
+
+body > nav {
+    grid-area: nav;
+    display: block;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    overflow: hidden auto;
+    background: linear-gradient(
+	to right,
+	rgb(32, 32, 32),
+	black 5%,
+	rgb(32, 32, 32) 25%,
+	rgb(32, 32, 32) 75%,
+	black 95%,
+	rgb(64, 0, 0),
+    );
+    font-family: "Special Elite", ui-serif, Georgia, "Times New Roman", serif;
+    text-align: center;
+    height: 100vh;
+}
+
+body > header, body > main, body > footer {
     background: linear-gradient(
 	to right,
 	rgb(64, 0, 0),
@@ -13,7 +51,58 @@ body {
     );
 }
 
+
+@media (max-width: 800px) {
+    body {
+	grid-template-areas:
+	    "nav"
+	    "header"
+	    "main"
+	    "footer";
+	grid-template-columns: 1fr;
+    }
+    body > nav {
+	position: static;
+	max-height: 0;
+	opacity: 0;
+	transition: max-height 0.3s ease, opacity 0.8s ease;
+    }
+    .nav-label {
+	display: block;
+	font-size: 2rem;
+    }
+    body:has(#nav-checkbox:checked) > nav {
+	max-height: 100vh;
+	opacity: 1;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+    }
+}
+
+nav img {
+    max-width: 50%;
+    max-height: 20vh;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+nav ul, nav li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    margin: 0.2rem auto;
+    padding: 0;
+    width: 100%;
+}
+
 body > header {
+    grid-area: header;
     position: relative;
     max-width: 100%;
     margin-top: 0;
@@ -21,6 +110,7 @@ body > header {
     margin-right: 0;
     padding: 0;
     overflow: hidden;
+    text-align: center;
 }
 
 body > header > img {
@@ -38,7 +128,7 @@ body > header > img {
     );
 }
 
-body > header > h1 {
+body > header > * {
     position: relative;
     text-shadow:
 	0 0 4px rgba(0,0,0,0.6),
@@ -46,11 +136,22 @@ body > header > h1 {
 }
 
 body > main {
+    grid-area: main;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+body > main > * {
     max-width: 60ch;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    scroll-margin-top: 1rem;
+}
+
+body > footer {
+    grid-area: footer;
+    max-width: 100%;
 }
 
 h1,h2,h3 {

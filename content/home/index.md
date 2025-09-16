@@ -40,14 +40,17 @@ in-house band or guest performers.
 | Friday                                             | 16:00 ‑ 01:00 |
 | Saturday                                           | 16:00 ‑ 01:00 |
 | Sunday                                             | 16:00 ‑ 01:00 |
+{ #opening }
 
 You're very welcome to just turn up at our door!  But if you'd like to
 guarantee yourself a space, please do [make a booking](#resdiary).
 (And if you arrive on time, you'll get an extra special treat!)
 
 {{< resdiary >}}
+{ #booking }
 
 You'll find us at 20 Downing Street, next to the entrance of the
 Hilton Hotel.  Hope to see you soon!
 
 {{< googlemap >}}
+{ #location }

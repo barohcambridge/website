@@ -1,0 +1,23 @@
+{{- $home := .Site.GetPage "/home/index.md" -}}
+{{- $menu := .Site.GetPage "/menu/index.md" -}}
+{{- $games := .Site.GetPage "/games/index.md" -}}
+{{- $hire := .Site.GetPage "/hire/index.md" -}}
+{{- $contact := .Site.GetPage "/contact/index.md" -}}
+<nav>
+  <label class="nav-label" for="nav-checkbox">☰</label>
+  <input type="checkbox" id="nav-checkbox">
+  {{- $logo := resources.Get "/images/logored.svg" -}}
+  <a href="{{ $home.RelPermalink }}">
+    {{- partial "image.html" (dict "image" $logo) -}}
+  </a>
+  <ul>
+    <li><a href="{{ $home.RelPermalink }}">Home</a></li>
+    <li><a href="{{ $home.RelPermalink }}#opening">Opening hours</a></li>
+    <li><a href="{{ $home.RelPermalink }}#booking">Book now</a></li>
+    <li><a href="{{ $home.RelPermalink }}#location">Find us</a></li>
+    <li><a href="{{ $menu.RelPermalink }}">Menu</a></li>
+    <li><a href="{{ $games.RelPermalink }}">Games</a></li>
+    <li><a href="{{ $hire.RelPermalink }}">Venue hire</a></li>
+    <li><a href="{{ $contact.RelPermalink }}">Contact us</a></li>
+  </ul>
+</nav>
