@@ -1,5 +1,8 @@
 ---
 url: "/"
+description: >-
+  Table service cocktail bar in Cambridge with retro games consoles,
+  live music, and occasional sharks!
 ---
 
 # Bar -OH

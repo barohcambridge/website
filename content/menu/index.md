@@ -1,3 +1,9 @@
+---
+description: >-
+  Amazing cocktails presented with swirling smoke, edible
+  custom-printed pictures, and sharks!
+---
+
 # Menu
 
 ![Shark Bite cocktail closeup](images/sharkbite.jpeg)

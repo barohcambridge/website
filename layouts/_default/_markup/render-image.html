@@ -30,6 +30,14 @@
   {{- $gradient_style = print "background:linear-gradient(" $gradient ");" -}}
 {{- end -}}
 
+{{/* Special-case first image in page */}}
+{{- $lazy := true -}}
+{{- if eq .Ordinal 0 -}}
+  {{- $lazy = false -}}
+  {{- $ogimage := $image.Fill "1200x630 webp" -}}
+  {{- .Page.Scratch.Set "og:image" $ogimage -}}
+{{- end -}}
+
 {{/* Render image */}}
 <figure role="figure" aria-label="{{- $label | plainify -}}">
   <div class="image-wrapper"
@@ -40,7 +48,7 @@
       "image" $image
       "alt" $caption
       "title" $label
-      "lazy" (ne .Ordinal 0)) }}
+      "lazy" $lazy) }}
   </div>
   {{ with $caption }}
     <figcaption>{{ $caption }}</figcaption>

@@ -1,10 +1,27 @@
+{{- $ignored := .Content -}}
 {{- $title := (index .Page.Fragments.Headings 0).Title -}}
+{{- if ne $title .Site.Title -}}
+  {{- $title = print $title " | " .Site.Title -}}
+{{- end -}}
+{{- $home := .Site.GetPage "/home/index.md" -}}
+{{- $description := default $home.Description .Page.Description -}}
 <!doctype html>
 <html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark light">
+    <meta name="description" content="{{ $description }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    {{- with $ogimage := .Page.Scratch.Get "og:image" -}}
+      <meta property="og:image" content="{{ $ogimage.Permalink }}">
+      <meta property="og:image:width" content="{{ $ogimage.Width }}">
+      <meta property="og:image:height" content="{{ $ogimage.Height }}">
+    {{- end -}}
     {{ partial "googlefont.html" (slice "Special Elite") }}
     <link rel="stylesheet"
 	  href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.red.min.css">
@@ -13,10 +30,7 @@
 	  integrity="{{ $css.Data.Integrity }}">
     {{- $logo := resources.Get "images/logo.png" -}}
     {{ partial "icons.html" (dict "icon" $logo) }}
-    <title>
-      {{- $title -}}
-      {{- if ne $title .Site.Title }} | {{ .Site.Title -}}{{- end -}}
-    </title>
+    <title>{{ $title }}</title>
   </head>
   <body>
     {{- partial "nav.html" . -}}
