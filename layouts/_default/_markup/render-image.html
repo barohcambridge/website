@@ -34,7 +34,11 @@
 {{- $lazy := true -}}
 {{- if eq .Ordinal 0 -}}
   {{- $lazy = false -}}
-  {{- $ogimage := $image.Fill "1200x630 webp" -}}
+  {{- $ogsize := "1200x630" -}}
+  {{- if le $image.Width (mul $image.Height 1.5) -}}
+    {{- $ogsize = "1200x1200" -}}
+  {{- end -}}
+  {{- $ogimage := $image.Fill (print $ogsize " webp") -}}
   {{- .Page.Scratch.Set "og:image" $ogimage -}}
 {{- end -}}
 
