@@ -44,7 +44,8 @@ in-house band or guest performers.
 
 You're very welcome to just turn up at our door!  But if you'd like to
 guarantee yourself a space, please do [make a booking](#resdiary).
-(And if you arrive on time, you'll get an extra special treat!)
+(And if you arrive on time, you'll get an extra special
+[treat!](../wheel/index.md))
 
 {{< resdiary >}}
 { #booking }
