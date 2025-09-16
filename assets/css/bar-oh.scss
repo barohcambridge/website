@@ -66,6 +66,15 @@ body > header, body > main, body > footer {
 	max-height: 0;
 	opacity: 0;
 	transition: max-height 0.3s ease, opacity 0.8s ease;
+	background: linear-gradient(
+	    to right,
+	    rgb(32, 32, 32),
+	    black 5%,
+	    rgb(32, 32, 32) 25%,
+	    rgb(32, 32, 32) 75%,
+	    black 95%,
+	    rgb(32, 32, 32),
+	);
     }
     .nav-label {
 	display: block;
