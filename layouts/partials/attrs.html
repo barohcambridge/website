@@ -1,0 +1,29 @@
+{{/* Parameters */}}
+{{- $string := . -}}
+
+{{/* Extract attribute substring, if present */}}
+{{- $attrstring := false -}}
+{{- range $string | findRESubmatch `{(.*)}\s*$` -}}
+  {{- $attrstring = index . 1 | replaceRE `\\\"` `"` -}}
+  {{- $string = $string | replaceRE `\s*{.*}\s*$` "" -}}
+{{- end -}}
+
+{{/* Construct attribute dictionary */}}
+{{- $attrs := dict -}}
+{{- range $attrstring | findRESubmatch `\s*(#(\S+)|\.(\S+)|(\S+?)="(.*?)")` -}}
+  {{- $key := index . 4 -}}
+  {{- $val := index . 5 -}}
+  {{- with $id := index . 2 -}}
+    {{- $key = "id" -}}
+    {{- $val = . -}}
+  {{- end -}}
+  {{- with $class := index . 3 -}}
+    {{- $key = "class" -}}
+    {{- $val = . -}}
+  {{- end -}}
+  {{- with index $attrs $key -}}
+    {{- $val = printf "%s %s" . $val -}}
+  {{- end -}}
+  {{- $attrs = merge $attrs (dict $key $val) -}}
+{{- end -}}
+{{- return (slice $string $attrs) -}}

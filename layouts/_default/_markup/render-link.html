@@ -20,8 +20,14 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
+{{- $titleattrs := partial "attrs.html" .Title -}}
+{{- $title := index $titleattrs 0 -}}
+{{- $attrs := index $titleattrs 1 -}}
 <a href="{{ $href }}"
-   {{- with .Title }} title="{{ . }}" {{- end -}}
+   {{- range $k, $v := $attrs -}}
+     {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
+   {{- end -}}
+   {{- with $title }} title="{{ $title }}" {{- end -}}
    >
   {{- .Text -}}
 </a>
