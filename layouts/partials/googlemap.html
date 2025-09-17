@@ -1,4 +1,5 @@
 {{/* Parameters */}}
+{{- $id := default "googlemap" .id -}}
 {{- $placeId := default .Site.Params.googlemap.placeId .placeId -}}
 {{- $width := default "100%" .width -}}
 {{- $height := default "420px" .height -}}
@@ -13,7 +14,7 @@
                     "q" (printf "place_id:%s" $placeId)
                     "zoom" $zoom) -}}
 {{- $src := printf "https://www.google.com/maps/embed/v1/place?%s" $qs -}}
-<div class="map-wrapper">
+<div id="{{ $id }}" class="map-wrapper">
   <iframe
     width="{{ $width }}"
     height="{{ $height }}"

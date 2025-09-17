@@ -51,10 +51,8 @@ guarantee yourself a space, please do [make a booking](#resdiary).
 [treat!](../wheel/index.md))
 
 {{< resdiary >}}
-{ #booking }
 
 You'll find us at 20 Downing Street, next to the entrance of the
 Hilton Hotel.  Hope to see you soon!
 
 {{< googlemap >}}
-{ #location }
