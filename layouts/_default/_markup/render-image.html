@@ -17,14 +17,6 @@
   {{- errorf "Missing image %q" .Destination -}}
 {{- end -}}
 
-{{/* Construct image(s) */}}
-{{- $gradient_style := false -}}
-{{- if $image -}}
-  {{- $gradient_colours := $image.Colors -}}
-  {{- $gradient := delimit ($gradient_colours) ", " -}}
-  {{- $gradient_style = print "background:linear-gradient(" $gradient ");" -}}
-{{- end -}}
-
 {{/* Special-case first image in page */}}
 {{- $lazy := true -}}
 {{- if eq .Ordinal 0 -}}
@@ -38,13 +30,8 @@
 {{- end -}}
 
 {{/* Render image */}}
-<div class="image-wrapper"
-  {{ with $gradient_style }}
-    {{ printf "style=%q" $gradient_style | safeHTMLAttr }}
-  {{ end }}>
-  {{ partial "image.html" (dict
-     "image" $image
-     "alt" $alt
-     "title" $title
-     "lazy" $lazy) }}
-</div>
+{{ partial "image.html" (dict
+   "image" $image
+   "alt" $alt
+   "title" $title
+   "lazy" $lazy) }}

@@ -14,6 +14,7 @@
 {{- $srcset := false -}}
 {{- $width := false -}}
 {{- $height := false -}}
+{{- $style := false -}}
 {{- if $image -}}
   {{- if strings.HasSuffix $image ".svg" -}}
     {{- $src = $image.RelPermalink -}}
@@ -24,6 +25,8 @@
   {{- else -}}
     {{- $width = $image.Width -}}
     {{- $height = $image.Height -}}
+    {{- $colors := delimit $image.Colors ", " -}}
+    {{- $style = print "--img-colors: " $colors -}}
     {{- $fallback_image := ($image.Resize (print $fallback_width "x")) -}}
     {{- $src = $fallback_image.RelPermalink -}}
     {{- $srcset = slice -}}
@@ -45,7 +48,7 @@
   {{ with $title }}
     title="{{ $title }}"
   {{ end }}
-  {{ with $src }}
+  {{ with $image }}
     width="{{ $width }}"
     height="{{ $height }}"
     src="{{ $src | safeURL }}"
@@ -59,5 +62,8 @@
     loading="lazy"
   {{ else }}
     fetchpriority="high"
+  {{ end }}
+  {{ with $style }}
+    {{ printf "style=%q" $style | safeHTMLAttr }}
   {{ end }}
 />
