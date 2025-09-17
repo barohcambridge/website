@@ -1,13 +1,20 @@
 {{/* Parameters */}}
-{{- $image := .image -}}
+{{- $path := .path -}}
 {{- $alt := .alt -}}
 {{- $title := .title -}}
 {{- $lazy := default true .lazy -}}
+{{- $ogimage := default false .ogimage -}}
 
 {{/* Configuration */}}
 {{- $srcwidths := slice 420 789 1019 1430 2048 -}}
 {{- $fallback_width := 789 -}}
 {{- $sizes := "(min-width: 800px) 50vw, 100vw" -}}
+
+{{/* Locate source image file */}}
+{{- $image := resources.Get $path -}}
+{{- if not $image -}}
+  {{- errorf "Missing image %q" $path -}}
+{{- end -}}
 
 {{/* Construct image(s) */}}
 {{- $src := false -}}
@@ -39,6 +46,15 @@
       {{- end -}}
     {{- end -}}
     {{- $srcset = delimit $srcset "," -}}
+    {{- if $ogimage -}}
+      {{- $ogsize := "1200x630" -}}
+      {{- if le $image.Width (mul $image.Height 1.5) -}}
+        {{- $ogsize = "1200x1200" -}}
+      {{- end -}}
+      {{- with $image.Fill (print $ogsize " webp") -}}
+        {{- $.Page.Scratch.Set "og:image" . -}}
+      {{- end -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 

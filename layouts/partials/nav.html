@@ -6,9 +6,9 @@
 <nav>
   <label class="nav-label" for="nav-checkbox">☰</label>
   <input type="checkbox" id="nav-checkbox">
-  {{- $logo := resources.Get "/images/logored.svg" -}}
   <a href="{{ $home.RelPermalink }}">
-    {{- partial "image.html" (dict "image" $logo) -}}
+    {{- $logo := "/images/logored.svg" -}}
+    {{- partial "image.html" (dict "Page" .Page "path" $logo) -}}
   </a>
   <ul>
     <li><a href="{{ $home.RelPermalink }}">Home</a></li>

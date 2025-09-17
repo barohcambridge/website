@@ -1,37 +1,8 @@
-{{/*
-  Adapted from:
-    https://rb.ax/blog/perfect-image-processing-with-hugo/
-    https://its.mw/posts/hugo-responsive-images/
-*/}}
-
-{{/* Image width break points */}}
-{{- $widths := slice "420" "789" "1019" "1430" "2048" -}}
-
-{{/* Parse Markdown alt text and title */}}
-{{- $alt := .Text | plainify -}}
-{{- $title := .Title | markdownify | plainify -}}
-
-{{/* Locate source image file */}}
-{{- $image := resources.Get .Destination -}}
-{{- if not $image -}}
-  {{- errorf "Missing image %q" .Destination -}}
-{{- end -}}
-
-{{/* Special-case first image in page */}}
-{{- $lazy := true -}}
-{{- if eq .Ordinal 0 -}}
-  {{- $lazy = false -}}
-  {{- $ogsize := "1200x630" -}}
-  {{- if le $image.Width (mul $image.Height 1.5) -}}
-    {{- $ogsize = "1200x1200" -}}
-  {{- end -}}
-  {{- $ogimage := $image.Fill (print $ogsize " webp") -}}
-  {{- .Page.Scratch.Set "og:image" $ogimage -}}
-{{- end -}}
-
-{{/* Render image */}}
-{{ partial "image.html" (dict
-   "image" $image
-   "alt" $alt
-   "title" $title
-   "lazy" $lazy) }}
+{{- partial "image.html" (dict
+    "Page" .Page
+    "path" .Destination
+    "alt" (.Text | plainify)
+    "title" (.Title | markdownify | plainify)
+    "lazy" (ne .Ordinal 0)
+    "ogimage" (eq .Ordinal 0)
+) }}
