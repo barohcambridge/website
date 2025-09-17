@@ -7,6 +7,7 @@ generations of Sony PlayStation, Xbox 360, and many more.  All of our
 consoles are free for you to play for as long as you like!
 
 ![Mario Kart](images/mariokart.jpeg)
+
 ![Sonic](images/sonic.jpeg)
 
 Rock out with your friends on our Guitar Hero sofa.  We have guitars
@@ -33,7 +34,9 @@ welcome to grab and play while you drink.  As with our collection of
 to use so please help yourself!
 
 ![Cards Against Humanity](images/cardsagainsthumanity.jpeg)
+
 ![Harry Potter chess set](images/chess.jpeg)
+
 ![Ransom Notes](images/ransomnotes.jpeg)
 
 ## Booking
