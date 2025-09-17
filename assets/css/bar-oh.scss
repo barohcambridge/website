@@ -236,7 +236,8 @@ main > img {
     margin-bottom: 2rem;
 }
 
-div.map-wrapper {
+main > iframe.googlemap {
+    display: block;
     box-shadow: 0 0 2rem 0.8rem rgba(0, 255, 255, 0.5);
     border-radius: 1rem;
     overflow: hidden;
@@ -244,7 +245,8 @@ div.map-wrapper {
     margin-bottom: 2rem;
 }
 
-div.booking-wrapper {
+main > iframe.resdiary {
+    display: block;
     box-shadow: 0 0 2rem 0.8rem rgba(0, 0, 255, 0.5);
     border-radius: 1rem;
     overflow: hidden;

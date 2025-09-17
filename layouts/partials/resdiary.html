@@ -8,17 +8,17 @@
 {{/* Render */}}
 {{- $src := printf "https://booking.resdiary.com/widget/Standard/%s/%s"
                    $siteName $widgetId -}}
-<div id="{{ $id }}" class="booking-wrapper">
-  <iframe
-    width="{{ $width }}"
-    height="{{ $height }}"
-    title="Instant Booking"
-    frameborder="0"
-    style="border:0"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
+<iframe
+  id="{{ $id }}"
+  class="resdiary"
+  width="{{ $width }}"
+  height="{{ $height }}"
+  title="Instant Booking"
+  frameborder="0"
+  style="border:0"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
     allow="payment *"
-    {{ printf "src=%q" $src | safeHTMLAttr }}
-    >
-  </iframe>
-</div>
+  {{ printf "src=%q" $src | safeHTMLAttr }}
+  >
+</iframe>
