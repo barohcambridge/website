@@ -8,13 +8,8 @@
 {{- $widths := slice "420" "789" "1019" "1430" "2048" -}}
 
 {{/* Parse Markdown alt text and title */}}
-{{- $alt := .Text -}}
-{{- $label := .Text -}}
-{{- $caption := "" -}}
-{{- if ne .Title "" -}}
-  {{- $caption = .Title | $.Page.RenderString -}}
-  {{- $label = $caption -}}
-{{- end -}}
+{{- $alt := .Text | plainify -}}
+{{- $title := .Title | markdownify | plainify -}}
 
 {{/* Locate source image file */}}
 {{- $image := resources.Get .Destination -}}
@@ -43,18 +38,13 @@
 {{- end -}}
 
 {{/* Render image */}}
-<figure role="figure" aria-label="{{- $label | plainify -}}">
-  <div class="image-wrapper"
-    {{ with $gradient_style }}
-      {{ printf "style=%q" $gradient_style | safeHTMLAttr }}
-    {{ end }}>
-    {{ partial "image.html" (dict
-      "image" $image
-      "alt" $caption
-      "title" $label
-      "lazy" $lazy) }}
-  </div>
-  {{ with $caption }}
-    <figcaption>{{ $caption }}</figcaption>
-  {{ end }}
-</figure>
+<div class="image-wrapper"
+  {{ with $gradient_style }}
+    {{ printf "style=%q" $gradient_style | safeHTMLAttr }}
+  {{ end }}>
+  {{ partial "image.html" (dict
+     "image" $image
+     "alt" $alt
+     "title" $title
+     "lazy" $lazy) }}
+</div>

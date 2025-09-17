@@ -41,8 +41,10 @@
 
 {{/* Render image */}}
 <img
-  alt="{{ $alt | markdownify | plainify }}"
-  title="{{ $title | plainify }}"
+  alt="{{ $alt }}"
+  {{ with $title }}
+    title="{{ $title }}"
+  {{ end }}
   {{ with $src }}
     width="{{ $width }}"
     height="{{ $height }}"
