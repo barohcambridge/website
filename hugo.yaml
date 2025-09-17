@@ -10,10 +10,6 @@ markup:
       wrapStandAloneImageWithinParagraph: false
     renderer:
       unsafe: true
-    renderHooks:
-      link:
-        enableDefault: true
-        useEmbedded: "always"
 
 image:
   resampleFilter: "Lanczos"

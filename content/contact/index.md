@@ -8,9 +8,9 @@ within two working days.  For instant bookings, please use our
 
 ## Phone
 
-You can contact us by telephone during our opening hours on {{<
-telephone text="01223 319420" number="+441223319420" >}}.  For instant
-bookings, please use our [booking form](#resdiary) instead.
+You can contact us by telephone during our opening hours on
+[01223 319420](tel:+441223319420).  For instant bookings, please use
+our [booking form](#resdiary) instead.
 
 ## Venue hire
 
