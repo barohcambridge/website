@@ -2,7 +2,7 @@
 headless: true
 ---
 
-![Bar -OH logo](images/logored.svg)
+[![Bar -OH logo](images/logored.svg)](../home/index.md)
 
 * [Home](../home/index.md)
 * [Opening hours](../home/index.md#opening)
