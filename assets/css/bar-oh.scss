@@ -1,3 +1,16 @@
+/// Extract RGB vector values from a colour
+///
+/// @param {Color} $color	Any valid colour
+/// @return {List}		Comma-separated RGB values
+///
+/// This is intended for assignment to CSS variables that can
+/// subsequently be used within rgba() expressions to construct
+/// semi-transparent versions of the colour.
+///
+@function rgbv($color) {
+    @return red($color), green($color), blue($color);
+}
+
 html {
     font-size: calc(clamp(16px, 1vw + 12px, 24px));
     scroll-behavior: smooth;
@@ -218,10 +231,16 @@ a.button,
 main > iframe,
 main > img,
 main > table {
+    --box-shadow-color: rgba(var(--box-shadow-rgbv), 0.5);
+    --box-shadow-pulse-color: rgba(var(--box-shadow-rgbv), 0.8);
     display: block;
     overflow: hidden;
     border-radius: 1rem;
     box-shadow: 0 0 2rem 0.8rem var(--box-shadow-color);
+}
+
+.pulse {
+    animation: pulse-shadow 2s ease-in-out infinite;
 }
 
 @keyframes pulse-shadow {
@@ -229,45 +248,45 @@ main > table {
 	box-shadow: 0 0 2rem 0.8rem var(--box-shadow-color);
     }
     50% {
-	box-shadow: 0 0 2rem 1.2rem var(--box-shadow-color);
+	box-shadow: 0 0 2rem 1.2rem var(--box-shadow-pulse-color);
     }
 }
 
 main > table {
+    --box-shadow-rgbv: #{rgbv(white)};
     display: table;
-    --box-shadow-color: rgba(255, 255, 255, 0.5);
 }
 
 main > img {
+    --box-shadow-rgbv: #{rgbv(red)};
     background: linear-gradient(var(--img-colors));
-    --box-shadow-color: rgba(255, 0, 0, 0.5);
 }
 
 main > iframe.googlemap {
-    --box-shadow-color: rgba(0, 255, 255, 0.5);
+    --box-shadow-rgbv: #{rgbv(aqua)};
 }
 
 main > iframe.resdiary {
-    --box-shadow-color: rgba(0, 0, 255, 0.5);
+    --box-shadow-rgbv: #{rgbv(blue)};
 }
 
 main > iframe.youtube {
     aspect-ratio: 16 / 9;
     height: auto;
-    --box-shadow-color: rgba(255, 255, 0, 0.5);
+    --box-shadow-rgbv: #{rgbv(yellow)};
 }
 
 a.button {
+    --button-rgbv: #{rgbv(red)};
+    --box-shadow-rgbv: var(--button-rgbv);
     margin: 2rem auto;
-    animation: pulse-shadow 2s ease-in-out infinite;
     width: fit-content;
     font-family: "Special Elite", ui-serif, Georgia, "Times New Roman", serif;
     font-size: 1.5rem;
     text-align: center;
     color: white;
-    background-color: red;
     padding: 1rem;
-    --box-shadow-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(var(--button-rgbv), 1.0);
 }
 
 ul.text-rotator {

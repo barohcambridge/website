@@ -21,6 +21,6 @@ drink with a foam top), tell the staff your picture number, and get
 your camera ready to capture the moment it arrives!
 
 [Upload photo](https://webapp.drinkripples.com
-"{ #upload .button target=\"_blank\" }")
+"{ #upload .button .pulse target=\"_blank\" }")
 
 ![Drink printing](images/ripples2.jpeg)
