@@ -94,7 +94,7 @@ nav img {
     transition: max-height 0.3s ease;
     width: auto;
     height: auto;
-    margin: 0 auto;
+    margin: 0.2rem auto;
 }
 
 nav ul, nav li {
@@ -154,8 +154,7 @@ body > main {
 
 body > main > * {
     max-width: calc(min(60ch, 100%));
-    margin-left: auto;
-    margin-right: auto;
+    margin: 2rem auto;
     scroll-margin-top: 1rem;
 }
 
@@ -173,11 +172,6 @@ h1 {
     font-size: calc(clamp(3rem, 1vw + 2rem, 6rem));
     margin-top: 3rem;
     margin-bottom: 3rem;
-}
-
-p {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 thead tr:not(:has(th:not(:empty))) {
@@ -224,8 +218,6 @@ table {
     box-shadow: 0 0 2rem 0.8rem rgba(255, 255, 255, 0.5);
     border-radius: 1rem;
     overflow: hidden;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 main > img {
@@ -233,8 +225,6 @@ main > img {
     border-radius: 1rem;
     background: linear-gradient(var(--img-colors));
     overflow: hidden;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 main > iframe.googlemap {
@@ -242,8 +232,6 @@ main > iframe.googlemap {
     box-shadow: 0 0 2rem 0.8rem rgba(0, 255, 255, 0.5);
     border-radius: 1rem;
     overflow: hidden;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 main > iframe.resdiary {
@@ -251,8 +239,6 @@ main > iframe.resdiary {
     box-shadow: 0 0 2rem 0.8rem rgba(0, 0, 255, 0.5);
     border-radius: 1rem;
     overflow: hidden;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 main > iframe.youtube {
@@ -260,22 +246,17 @@ main > iframe.youtube {
     box-shadow: 0 0 2rem 0.8rem rgba(255, 255, 0, 0.5);
     border-radius: 1rem;
     overflow: hidden;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
     aspect-ratio: 16 / 9;
     height: auto;
 }
 
 a.button {
     display: block;
+    margin: 2rem auto;
     box-shadow: 0 0 2rem 0.8rem rgba(255, 0, 0, 0.5);
     animation: pulse-shadow 2s ease-in-out infinite;
     border-radius: 1rem;
     overflow: hidden;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: auto;
-    margin-right: auto;
     width: fit-content;
     font-family: "Special Elite", ui-serif, Georgia, "Times New Roman", serif;
     font-size: 1.5rem;
