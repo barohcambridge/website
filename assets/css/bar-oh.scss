@@ -43,6 +43,7 @@
 html {
     font-size: calc(clamp(16px, 1vw + 12px, 24px));
     scroll-behavior: smooth;
+    font-family: "Inter";
 }
 
 body {
@@ -51,7 +52,7 @@ body {
 	"nav header"
 	"nav main"
 	"nav footer";
-    grid-template-columns: 10rem 1fr;
+    grid-template-columns: 12rem 1fr;
 }
 
 #nav-checkbox {
@@ -194,7 +195,7 @@ body > main {
 }
 
 body > main > * {
-    max-width: calc(min(60ch, 100%));
+    max-width: calc(min(50ch, 100%));
     margin: 2rem auto;
     scroll-margin-top: 1rem;
 }
