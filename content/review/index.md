@@ -6,7 +6,7 @@ aliases:
 # Reviews
 
 ## ★ ★ ★ ★ ★
-{ .stars }
+{ .stars .pulse }
 
 ![Happy customers](images/happy.jpeg)
 

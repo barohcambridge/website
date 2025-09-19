@@ -208,47 +208,41 @@ img {
 }
 
 .stars {
-    color: yellow;
-    animation: pulse-stars 2s ease-in-out infinite;
+    --stars-rgbv: #{rgbv(yellow)};
+    --text-shadow-rgbv: var(--stars-rgbv);
+    color: rgba(var(--stars-rgbv), 1.0);
     text-shadow:
-	0 0 4px rgba(255,255,0,0.6),
-	0 0 12px rgba(255,255,0,0.9);
-}
-
-@keyframes pulse-stars {
-    0%, 100% {
-	text-shadow:
-	    0 0 4px rgba(255,255,0,0.6),
-	    0 0 12px rgba(255,255,0,0.9);
-    }
-    50% {
-	text-shadow:
-	    0 0 4px rgba(255,255,0,0.9);
-    }
+	0 0 4px rgba(var(--text-shadow-rgbv), 0.9);
 }
 
 a.button,
 main > iframe,
 main > img,
 main > table {
-    --box-shadow-color: rgba(var(--box-shadow-rgbv), 0.5);
-    --box-shadow-pulse-color: rgba(var(--box-shadow-rgbv), 0.8);
     display: block;
     overflow: hidden;
     border-radius: 1rem;
-    box-shadow: 0 0 2rem 0.8rem var(--box-shadow-color);
+    box-shadow:
+	0 0 2rem 0.8rem rgba(var(--box-shadow-rgbv), 0.5);
 }
 
 .pulse {
-    animation: pulse-shadow 2s ease-in-out infinite;
+    animation: pulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse-shadow {
+@keyframes pulse {
     0%, 100% {
-	box-shadow: 0 0 2rem 0.8rem var(--box-shadow-color);
+	box-shadow:
+	    0 0 2rem 0.8rem rgba(var(--box-shadow-rgbv), 0.5);
+	text-shadow:
+	    0 0 4px rgba(var(--text-shadow-rgbv), 0.9);
     }
     50% {
-	box-shadow: 0 0 2rem 1.2rem var(--box-shadow-pulse-color);
+	box-shadow:
+	    0 0 2rem 1.2rem rgba(var(--box-shadow-rgbv), 0.8);
+	text-shadow:
+	    0 0 4px rgba(var(--text-shadow-rgbv), 0.6),
+	    0 0 12px rgba(var(--text-shadow-rgbv), 0.9);
     }
 }
 
