@@ -11,6 +11,35 @@
     @return red($color), green($color), blue($color);
 }
 
+/// Box and text shadows with optional pulsing effect
+///
+///  - apply box shadow wherever --box-shadow-rgbv is defined
+///
+///  - apply text shadow wherever --text-shadow-rgbv is defined
+///
+///  - if .pulse class is applied, animate the defined shadow(s)
+///
+* {
+    --box-shadow-rgbv: initial;
+    --text-shadow-rgbv: initial;
+    box-shadow:
+	0 0 2rem 0.8rem rgba(var(--box-shadow-rgbv), 0.5);
+    text-shadow:
+	0 0 4px rgba(var(--text-shadow-rgbv), 0.9);
+}
+@keyframes pulse {
+    50% {
+	box-shadow:
+	    0 0 2rem 1.2rem rgba(var(--box-shadow-rgbv), 0.8);
+	text-shadow:
+	    0 0 4px rgba(var(--text-shadow-rgbv), 0.6),
+	    0 0 12px rgba(var(--text-shadow-rgbv), 0.9);
+    }
+}
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
 html {
     font-size: calc(clamp(16px, 1vw + 12px, 24px));
     scroll-behavior: smooth;
@@ -63,7 +92,6 @@ body > header, body > main, body > footer {
 	rgb(64, 0, 0)
     );
 }
-
 
 @media (max-width: 800px) {
     body {
@@ -211,8 +239,6 @@ img {
     --stars-rgbv: #{rgbv(yellow)};
     --text-shadow-rgbv: var(--stars-rgbv);
     color: rgba(var(--stars-rgbv), 1.0);
-    text-shadow:
-	0 0 4px rgba(var(--text-shadow-rgbv), 0.9);
 }
 
 a.button,
@@ -222,28 +248,6 @@ main > table {
     display: block;
     overflow: hidden;
     border-radius: 1rem;
-    box-shadow:
-	0 0 2rem 0.8rem rgba(var(--box-shadow-rgbv), 0.5);
-}
-
-.pulse {
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-	box-shadow:
-	    0 0 2rem 0.8rem rgba(var(--box-shadow-rgbv), 0.5);
-	text-shadow:
-	    0 0 4px rgba(var(--text-shadow-rgbv), 0.9);
-    }
-    50% {
-	box-shadow:
-	    0 0 2rem 1.2rem rgba(var(--box-shadow-rgbv), 0.8);
-	text-shadow:
-	    0 0 4px rgba(var(--text-shadow-rgbv), 0.6),
-	    0 0 12px rgba(var(--text-shadow-rgbv), 0.9);
-    }
 }
 
 main > table {
