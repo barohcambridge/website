@@ -264,6 +264,7 @@ main > img {
 
 main > iframe.googlemap {
     --box-shadow-rgbv: #{rgbv(aqua)};
+    height: 75vh;
 }
 
 main > iframe.resdiary {
