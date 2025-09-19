@@ -23,14 +23,14 @@
     --box-shadow-rgbv: initial;
     --text-shadow-rgbv: initial;
     box-shadow:
-	0 0 2rem 0.8rem rgba(var(--box-shadow-rgbv), 0.5);
+	0 0 48px 20px rgba(var(--box-shadow-rgbv), 0.5);
     text-shadow:
 	0 0 4px rgba(var(--text-shadow-rgbv), 0.9);
 }
 @keyframes pulse {
     50% {
 	box-shadow:
-	    0 0 2rem 1.2rem rgba(var(--box-shadow-rgbv), 0.8);
+	    0 0 48px 28px rgba(var(--box-shadow-rgbv), 0.8);
 	text-shadow:
 	    0 0 4px rgba(var(--text-shadow-rgbv), 0.6),
 	    0 0 12px rgba(var(--text-shadow-rgbv), 0.9);
