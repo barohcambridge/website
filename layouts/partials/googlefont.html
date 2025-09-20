@@ -1,9 +1,17 @@
 {{/* Parameters */}}
-{{- $fonts := . -}}
+{{- $fonts := .fonts -}}
+{{- $inline := default true .inline -}}
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 {{- range $font := $fonts -}}
   {{- $qs := querify (dict "family" $font "display" "swap") -}}
-  {{- $href := printf "https://fonts.googleapis.com/css2?%s" $qs -}}
-  <link rel="stylesheet" {{ printf "href=%q" $href | safeHTMLAttr }}>
+  {{- $url := printf "https://fonts.googleapis.com/css2?%s" $qs -}}
+  {{- $ua := "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -}}
+  {{- $opts := dict "headers" (dict "User-Agent" $ua) -}}
+  {{- $css := resources.GetRemote $url $opts | resources.Minify -}}
+  {{- if $inline -}}
+    <style>{{ $css.Content | safeCSS }}</style>
+  {{- else -}}
+    <link rel="stylesheet" {{ printf "href=%q" $url | safeHTMLAttr }}>
+  {{- end -}}
 {{- end -}}
