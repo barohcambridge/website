@@ -3,7 +3,7 @@
 {{- if ne $title .Site.Title -}}
   {{- $title = print $title " | " .Site.Title -}}
 {{- end -}}
-{{- $home := .Site.GetPage "home" -}}
+{{- $home := .Site.GetPage "/home" -}}
 {{- $description := default $home.Description .Page.Description -}}
 <!doctype html>
 <html lang="en" data-theme="dark">
