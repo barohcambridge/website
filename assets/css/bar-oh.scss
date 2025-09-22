@@ -40,6 +40,75 @@
     animation: pulse 2s ease-in-out infinite;
 }
 
+/// Grid layout
+///
+/// Desktop: nav on left, header-main-footer on right
+/// Mobile: nav grows down from top, then header-main-footer
+///
+body {
+    // Desktop grid layout
+    display: grid;
+    grid-template-areas:
+	"nav header"
+	"nav main"
+	"nav footer";
+    grid-template-columns: 12rem 1fr;
+    margin: 0;
+}
+body > nav {
+    // Nav: full-height sticky section with vertical scroll if needed
+    grid-area: nav;
+    max-width: 100%;
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden auto;
+}
+body > header {
+    // Header: no padding to allow for full-width image behind text
+    grid-area: header;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+body > main {
+    // Main body: full width, padded left and right
+    grid-area: main;
+    max-width: 100%;
+    padding: 0 1rem;
+}
+body > footer {
+    // Footer: full width, padded left and right
+    grid-area: footer;
+    max-width: 100%;
+    padding: 0 1rem;
+}
+@media(max-width: 800px) {
+    body {
+	// Mobile grid layout
+	grid-template-areas:
+	    "nav"
+	    "header"
+	    "main"
+	    "footer";
+	grid-template-columns: 1fr;
+    }
+    body > nav {
+	// Nav: zero-height and invisible by default
+	position: static;
+	max-height: 0;
+	opacity: 0;
+	transition: max-height 0.3s ease, opacity 0.8s ease;
+    }
+    body:has(#nav-checkbox:checked) > nav {
+	// Nav: full viewport height when opened
+	max-height: 100vh;
+	opacity: 1;
+    }
+}
+
 /// Fonts: "Inter" for body text, "Special Elite" for headings
 ///
 /// The suggested font fallback lists are derived from
@@ -59,7 +128,7 @@
 	"Courier New",
 	monospace;
     // Body text: Inter (or generic Neo Grotesque)
-    --font-size-body: clamp(1rem, 0.8vw + 0.8rem, 1.5rem);
+    --font-size-body: clamp(1rem, 1.4vw + 0.8rem, 2rem);
     --font-body:
 	var(--font-size-body)/1.4
 	"Inter", var(--font-neo-grotesque);
@@ -69,8 +138,13 @@
 	var(--font-size-head)/1.25
 	"Special Elite", var(--font-monospace-slab-serif);
 }
+
+/// Typography
+///
 html {
     font: var(--font-body);
+    color: rgb(192, 200, 208);
+    background-color: black;
     text-rendering: optimizeLegibility;
     text-underline-offset: 0.125em;
 }
@@ -78,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
     font: var(--font-head);
     text-align: center;
     text-wrap: balance;
-    color: rgb(240, 241, 243);
+    color: rgb(240, 240, 240);
 }
 h1 {
     font-size: 3rem;
@@ -111,18 +185,6 @@ h1 {
 
 html {
     scroll-behavior: smooth;
-    color: rgb(194, 199, 208);
-    background-color: black;
-}
-
-body {
-    display: grid;
-    grid-template-areas:
-	"nav header"
-	"nav main"
-	"nav footer";
-    grid-template-columns: 12rem 1fr;
-    margin: 0;
 }
 
 #nav-checkbox {
@@ -134,12 +196,6 @@ body {
 }
 
 body > nav {
-    grid-area: nav;
-    display: block;
-    position: sticky;
-    top: 0;
-    align-self: start;
-    overflow: hidden auto;
     background: linear-gradient(
 	to right,
 	rgb(32, 32, 32),
@@ -151,7 +207,6 @@ body > nav {
     );
     font: var(--font-head);
     text-align: center;
-    height: 100vh;
 }
 
 body > header, body > main, body > footer {
@@ -165,19 +220,7 @@ body > header, body > main, body > footer {
 }
 
 @media (max-width: 800px) {
-    body {
-	grid-template-areas:
-	    "nav"
-	    "header"
-	    "main"
-	    "footer";
-	grid-template-columns: 1fr;
-    }
     body > nav {
-	position: static;
-	max-height: 0;
-	opacity: 0;
-	transition: max-height 0.3s ease, opacity 0.8s ease;
 	background: linear-gradient(
 	    to right,
 	    rgb(32, 32, 32),
@@ -191,12 +234,6 @@ body > header, body > main, body > footer {
     .nav-label {
 	display: block;
 	font: var(--font-head);
-    }
-    body:has(#nav-checkbox:checked) > nav {
-	max-height: 100vh;
-	opacity: 1;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
     }
 }
 
@@ -232,18 +269,6 @@ nav a:hover {
     text-decoration-thickness: 2px;
 }
 
-body > header {
-    grid-area: header;
-    position: relative;
-    max-width: 100%;
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-    overflow: hidden;
-    text-align: center;
-}
-
 body > header > img {
     position: absolute;
     width: 100%;
@@ -266,23 +291,12 @@ body > header > * {
 	0 0 12px rgba(0,0,0,0.9);
 }
 
-body > main {
-    grid-area: main;
-    max-width: 100%;
-    padding: 0 1rem;
-}
-
 body > main > * {
     max-width: calc(min(32rem, 100%));
     margin: 2rem auto;
     scroll-margin-top: 1rem;
 }
 
-body > footer {
-    grid-area: footer;
-    max-width: 100%;
-    padding: 0 1rem;
-}
 
 thead tr:not(:has(th:not(:empty))) {
   display: none;
@@ -293,16 +307,22 @@ table tbody tr:last-child td {
 }
 
 table {
+    background-color: rgb(19, 23, 31);
     border-spacing: 0;
 }
 
 td {
-    background-color: rgb(19, 23, 31);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     border: none;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: rgb(64,64,64);
+}
+td:first-child {
+    padding-left: 0.8rem;
+}
+td:last-child {
+    padding-right: 0.8rem;
 }
 
 td > a {
