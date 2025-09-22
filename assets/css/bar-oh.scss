@@ -89,14 +89,18 @@ a {
     --link-rgbv: #{rgbv(rgb(255, 128, 128))};
     color: rgba(var(--link-rgbv), 1.0);
     text-decoration-color: rgba(var(--link-rgbv), 1.0);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
     transition:
 	color 0.1s ease,
 	text-decoration-color 0.1s ease,
+	text-decoration-thickness 0.1s ease,
 	text-shadow 0.1s ease;
 }
 a:hover {
     --link-rgbv: #{rgbv(rgb(255, 168, 168))};
     --text-shadow-rgbv: #{rgbv(rgb(255, 128, 128))};
+    text-decoration-thickness: 2px;
 }
 
 h1 {
@@ -217,13 +221,14 @@ nav a {
     padding: 0;
     width: 100%;
     text-decoration-line: none;
+    text-decoration-thickness: 0px;
+    text-underline-offset: 0.175em;
 }
 nav a:hover {
     --link-rgbv: #{rgbv(white)};
     --text-shadow-rgbv: #{rgbv(rgb(255,224,224))};
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
-    text-underline-offset: 0.175em;
 }
 
 body > header {
