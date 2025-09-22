@@ -40,10 +40,74 @@
     animation: pulse 2s ease-in-out infinite;
 }
 
+/// Fonts: "Inter" for body text, "Special Elite" for headings
+///
+/// The suggested font fallback lists are derived from
+/// https://modernfontstacks.com/
+///
+:root {
+    // Fallback fonts
+    --font-neo-grotesque:
+	"Roboto",
+	"Helvetica Neue",
+	"Arial Nova",
+	"Nimbus Sans",
+	"Arial",
+	sans-serif;
+    --font-monospace-slab-serif:
+	"Nimbus Mono PS",
+	"Courier New",
+	monospace;
+    // Body text: Inter (or generic Neo Grotesque)
+    --font-size-body: clamp(1rem, 0.8vw + 0.8rem, 1.5rem);
+    --font-body:
+	var(--font-size-body)/1.4
+	"Inter", var(--font-neo-grotesque);
+    // Headings: Special Elite (or generic Monospace Slab Serif)
+    --font-size-head: 1.2rem;
+    --font-head:
+	var(--font-size-head)/1.25
+	"Special Elite", var(--font-monospace-slab-serif);
+}
 html {
-    font-size: calc(clamp(16px, 1vw + 12px, 24px));
+    font: var(--font-body);
+    text-rendering: optimizeLegibility;
+    text-underline-offset: 0.125em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font: var(--font-head);
+    text-align: center;
+    color: rgb(240, 241, 243);
+}
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 1.8rem;
+}
+a {
+    --link-rgbv: #{rgbv(rgb(255, 128, 128))};
+    color: rgba(var(--link-rgbv), 1.0);
+    text-decoration-color: rgba(var(--link-rgbv), 1.0);
+    transition:
+	color 0.1s ease,
+	text-decoration-color 0.1s ease,
+	text-shadow 0.1s ease;
+}
+a:hover {
+    --link-rgbv: #{rgbv(rgb(255, 168, 168))};
+    --text-shadow-rgbv: #{rgbv(rgb(255, 128, 128))};
+}
+
+h1 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+html {
     scroll-behavior: smooth;
-    font-family: "Inter";
+    color: rgb(194, 199, 208);
+    background-color: black;
 }
 
 body {
@@ -53,6 +117,7 @@ body {
 	"nav main"
 	"nav footer";
     grid-template-columns: 12rem 1fr;
+    margin: 0;
 }
 
 #nav-checkbox {
@@ -79,7 +144,7 @@ body > nav {
 	black 95%,
 	rgb(64, 0, 0),
     );
-    font-family: "Special Elite", ui-serif, Georgia, "Times New Roman", serif;
+    font: var(--font-head);
     text-align: center;
     height: 100vh;
 }
@@ -120,7 +185,7 @@ body > header, body > main, body > footer {
     }
     .nav-label {
 	display: block;
-	font-size: 2rem;
+	font: var(--font-head);
     }
     body:has(#nav-checkbox:checked) > nav {
 	max-height: 100vh;
@@ -146,11 +211,19 @@ nav ul, nav li {
 }
 
 nav a {
+    --link-rgbv: #{rgbv(white)};
     display: inline-block;
-    color: white;
     margin: 0.2rem auto;
     padding: 0;
     width: 100%;
+    text-decoration-line: none;
+}
+nav a:hover {
+    --link-rgbv: #{rgbv(white)};
+    --text-shadow-rgbv: #{rgbv(rgb(255,224,224))};
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.175em;
 }
 
 body > header {
@@ -190,12 +263,11 @@ body > header > * {
 body > main {
     grid-area: main;
     max-width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
 }
 
 body > main > * {
-    max-width: calc(min(50ch, 100%));
+    max-width: calc(min(32rem, 100%));
     margin: 2rem auto;
     scroll-margin-top: 1rem;
 }
@@ -203,17 +275,7 @@ body > main > * {
 body > footer {
     grid-area: footer;
     max-width: 100%;
-}
-
-h1,h2,h3 {
-    font-family: "Special Elite", ui-serif, Georgia, "Times New Roman", serif;
-    text-align: center;
-}
-
-h1 {
-    font-size: calc(clamp(3rem, 1vw + 2rem, 6rem));
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    padding: 0 1rem;
 }
 
 thead tr:not(:has(th:not(:empty))) {
@@ -222,6 +284,19 @@ thead tr:not(:has(th:not(:empty))) {
 
 table tbody tr:last-child td {
   border-bottom: none;
+}
+
+table {
+    border-spacing: 0;
+}
+
+td {
+    background-color: rgb(19, 23, 31);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(64,64,64);
 }
 
 td > a {
@@ -254,6 +329,7 @@ main > table {
 main > table {
     --box-shadow-rgbv: #{rgbv(white)};
     display: table;
+    width: 100%;
 }
 
 main > img {
@@ -267,6 +343,7 @@ main > iframe.googlemap {
 }
 
 main > iframe.resdiary {
+    background-color: white;
     --box-shadow-rgbv: #{rgbv(blue)};
 }
 
@@ -281,8 +358,7 @@ a.button {
     --box-shadow-rgbv: var(--button-rgbv);
     margin: 2rem auto;
     width: fit-content;
-    font-family: "Special Elite", ui-serif, Georgia, "Times New Roman", serif;
-    font-size: 1.5rem;
+    font: var(--font-head);
     text-align: center;
     color: white;
     padding: 1rem;
@@ -300,7 +376,7 @@ ul.text-rotator {
 }
 
 ul.text-rotator > li {
-    font-family: "Special Elite", ui-serif, Georgia, "Times New Roman", serif;
+    font: var(--font-head);
     font-size: 2rem;
     line-height: normal;
     list-style-type: none;

@@ -24,8 +24,6 @@
     {{- end -}}
     {{- partial "googlefont.html" (dict
         "fonts" (slice "Special Elite" "Inter" )) -}}
-    <link rel="stylesheet"
-	  href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.red.min.css">
     {{- $css := resources.Get "css/bar-oh.scss" | css.Sass | minify | fingerprint -}}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}"
 	  integrity="{{ $css.Data.Integrity }}">
