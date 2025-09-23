@@ -1,6 +1,7 @@
 <nav>
-  <label class="nav-label" for="nav-checkbox">☰</label>
+  <a id="nav"></a>
   <input type="checkbox" id="nav-checkbox">
+  <label class="nav-label" for="nav-checkbox">☰</label>
   {{- with .Site.GetPage "/nav" -}}
     {{ .Content }}
   {{- end -}}

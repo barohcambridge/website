@@ -92,6 +92,10 @@ body > footer {
     max-width: 100%;
     padding: 0 1rem;
 }
+#nav-checkbox, .nav-label, .nav-link {
+    // Nav controls hidden by default
+    display: none;
+}
 @media(max-width: 800px) {
     // Mobile version
     body {
@@ -114,6 +118,18 @@ body > footer {
 	// Nav: full viewport height when opened
 	max-height: 100vh;
 	opacity: 1;
+    }
+    .nav-label {
+	// Nav controls visible by default
+	display: block;
+    }
+    body:has(#nav-checkbox:checked) > header .nav-label {
+	// Hide header nav label while nav is open
+	display: none;
+    }
+    body:has(#nav-checkbox:checked) > header .nav-link {
+	// Show header nav link (instead of label) while nav is open
+	display: block;
     }
 }
 
@@ -243,25 +259,14 @@ html {
     scroll-behavior: smooth;
 }
 
-#nav-checkbox {
-    display: none;
-}
-
-.nav-label {
-    display: none;
-}
 
 body > nav {
     font: var(--font-head);
     text-align: center;
 }
 
-
-@media (max-width: 800px) {
-    .nav-label {
-	display: block;
-	font: var(--font-head);
-    }
+.nav-label {
+    font: var(--font-head);
 }
 
 nav img {
