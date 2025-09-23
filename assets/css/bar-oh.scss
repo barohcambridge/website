@@ -226,9 +226,14 @@ a {
 	text-decoration-thickness 0.1s ease,
 	text-shadow 0.1s ease;
 }
-a:hover {
+a:hover, a:focus-visible {
     --link-rgbv: #{rgbv(rgb(255, 168, 168))};
     --text-shadow-rgbv: #{rgbv(rgb(255, 128, 128))};
+    text-decoration-thickness: 2px;
+}
+a:active {
+    --link-rgbv: #{rgbv(rgb(255, 192, 192))};
+    --text-shadow-rgbv: #{rgbv(rgb(255, 168, 168))};
     text-decoration-thickness: 2px;
 }
 
@@ -273,8 +278,11 @@ nav img {
 	filter 0.5s ease;
 }
 
-nav img:hover {
+nav img:hover, nav img:focus-visible {
     --drop-shadow-rgbv: #{rgbv(rgb(192, 0, 0))};
+}
+nav img:active {
+    --drop-shadow-rgbv: #{rgbv(rgb(255, 0, 0))};
 }
 
 nav ul, nav li {
@@ -293,9 +301,15 @@ nav a {
     text-decoration-thickness: 0px;
     text-underline-offset: 0.175em;
 }
-nav a:hover {
+nav a:hover, nav a:focus-visible {
     --link-rgbv: #{rgbv(white)};
     --text-shadow-rgbv: #{rgbv(rgb(255,224,224))};
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+}
+nav a:active {
+    --link-rgbv: #{rgbv(rgb(255, 192, 192))};
+    --text-shadow-rgbv: #{rgbv(rgb(255, 168, 168))};
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
 }
