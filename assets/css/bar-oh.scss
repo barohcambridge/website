@@ -206,7 +206,7 @@ body > nav {
 	"Courier New",
 	monospace;
     // Body text: Inter (or generic Neo Grotesque)
-    --font-size-body: clamp(1rem, 1.4vw + 0.8rem, 2rem);
+    --font-size-body: clamp(1rem, 0.8vw + 0.8rem, 2rem);
     --font-body:
 	var(--font-size-body)/1.4
 	"Inter", var(--font-neo-grotesque);
@@ -238,24 +238,38 @@ h1 {
 h2 {
     font-size: 1.8rem;
 }
+
+/// Link highlighting
+///
 a {
+    // Colours defined on the base link
     --link-rgbv: #{rgbv(rgb(255, 128, 128))};
-    color: rgba(var(--link-rgbv), 1.0);
-    text-decoration-color: rgba(var(--link-rgbv), 1.0);
+    --link-hover-rgbv: #{rgbv(rgb(255, 168, 168))};
+    --link-hover-shadow-rgbv: #{rgbv(rgb(255, 128, 128))};
+    --link-active-rgbv: #{rgbv(rgb(255, 192, 192))};
+    --link-active-shadow-rgbv: #{rgbv(rgb(255, 168, 168))};
+    --link-underline-opacity: 1;
+    color: rgba(var(--link-rgbv), 1);
     text-decoration-line: underline;
     text-decoration-thickness: 1px;
+    text-decoration-color:
+	rgba(var(--link-rgbv), var(--link-underline-opacity));
     transition:
 	color 0.2s ease-in-out,
 	text-decoration-color 0.2s ease-in-out,
 	text-shadow 0.2s ease-in-out;
 }
 a:hover, a:focus-visible {
-    --link-rgbv: #{rgbv(rgb(255, 168, 168))};
-    --text-shadow-rgbv: #{rgbv(rgb(255, 128, 128))};
+    // Glow on hover or tab focus
+    --link-underline-opacity: 1;
+    --link-rgbv: var(--link-hover-rgbv);
+    --text-shadow-rgbv: var(--link-hover-shadow-rgbv);
 }
 a:active {
-    --link-rgbv: #{rgbv(rgb(255, 192, 192))};
-    --text-shadow-rgbv: #{rgbv(rgb(255, 168, 168))};
+    // Glow brighter on activation
+    --link-underline-opacity: 1;
+    --link-rgbv: var(--link-active-rgbv);
+    --text-shadow-rgbv: var(--link-active-shadow-rgbv);
 }
 
 h1 {
@@ -268,11 +282,6 @@ html {
 }
 
 
-body > nav {
-    font: var(--font-head);
-    text-align: center;
-}
-
 /// Nav controls
 ///
 a#nav {
@@ -283,8 +292,8 @@ a#nav {
 }
 .nav-label, .nav-link {
     // Nav control symbol (as label or as link)
-    padding: 1rem;
-    margin: 0 auto;
+    padding: 0;
+    margin: 1rem auto 0;
     text-align: center;
     font: var(--font-head);
     font-size: 1.5rem;
@@ -292,48 +301,51 @@ a#nav {
     text-decoration: none;
 }
 
+/// Nav text contents
+///
+nav p, nav ul, nav li {
+    // Top-level block items
+    display: block;
+    padding: 0;
+    margin: 0;
+    font: var(--font-head);
+    text-align: center;
+}
+nav a {
+    // Menu links
+    --link-rgbv: #{rgbv(white)};
+    --link-hover-rgbv: #{rgbv(white)};
+    --link-hover-shadow-rgbv: #{rgbv(rgb(255,224,224))};
+    --link-underline-opacity: 0;
+    display: block;
+    padding: 0;
+    margin: 0.5rem auto;
+    width: 100%;
+    text-underline-offset: 0.175em;
+}
+
+/// Nav logo
+///
 nav img {
+    // Occupy at most 25% of the viewport, grow/shrink smoothly
     max-width: 50%;
-    max-height: 20vh;
+    max-height: 25vh;
     width: auto;
     height: auto;
-    margin: 0.2rem auto;
+    margin: 0.5rem auto 1rem;
     transition:
 	max-height 0.3s ease,
 	filter 0.5s ease;
 }
-
 nav img:hover, nav img:focus-visible {
+    // Glow on hover
     --drop-shadow-rgbv: #{rgbv(rgb(192, 0, 0))};
 }
 nav img:active {
+    // Glow brighter on activation
     --drop-shadow-rgbv: #{rgbv(rgb(255, 0, 0))};
 }
 
-nav ul, nav li {
-    display: block;
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    --link-rgbv: #{rgbv(white)};
-    display: inline-block;
-    margin: 0.2rem auto;
-    padding: 0;
-    width: 100%;
-    text-decoration-color: rgba(var(--link-rgbv), 0);
-    text-underline-offset: 0.175em;
-}
-nav a:hover, nav a:focus-visible {
-    --link-rgbv: #{rgbv(white)};
-    --text-shadow-rgbv: #{rgbv(rgb(255,224,224))};
-    text-decoration-color: rgba(var(--link-rgbv), 1);
-}
-nav a:active {
-    --link-rgbv: #{rgbv(rgb(255, 192, 192))};
-    --text-shadow-rgbv: #{rgbv(rgb(255, 168, 168))};
-}
 
 body > header > img {
     position: absolute;
