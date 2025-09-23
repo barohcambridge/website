@@ -238,6 +238,14 @@ h1 {
 h2 {
     font-size: 1.8rem;
 }
+address {
+    font-style: normal;
+}
+article {
+    padding: 1rem 2rem;
+    color: rgb(32, 32, 32);
+    background-color: beige;
+}
 
 /// Link highlighting
 ///
@@ -280,7 +288,9 @@ h1 {
 html {
     scroll-behavior: smooth;
 }
-
+* {
+    box-sizing: border-box;
+}
 
 /// Nav controls
 ///
@@ -417,7 +427,8 @@ img {
 
 main > iframe,
 main > img,
-main > table {
+main > table,
+main > article {
     display: block;
     margin: 2rem auto;
     border-radius: 1rem;
@@ -449,6 +460,10 @@ main > iframe.youtube {
     aspect-ratio: 16 / 9;
     height: auto;
     --box-shadow-rgbv: #{rgbv(yellow)};
+}
+
+main > article {
+    --box-shadow-rgbv: #{rgbv(lightgrey)};
 }
 
 /// Special effect: text rotator
@@ -540,10 +555,8 @@ a.button {
     color: rgba(var(--stars-rgbv), 1.0);
 }
 
-article.invoice {
-    background-color: gray;
-}
-
+/// Special effect: right-aligned text within invoice
+///
 article.invoice .right {
     text-align: right;
 }
