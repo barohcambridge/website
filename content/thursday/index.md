@@ -4,7 +4,7 @@
 
 ![-OHpen Mic in session](images/ohpenmic.jpeg)
 
-On Thursdays we run our regular open mic evening.  Get up on stage and
+On Thursdays we run our weekly open mic evening.  Get up on stage and
 play your heart out, or just sit back and watch the fun while you
 enjoy our [cocktails](../menu/index.md) and [assorted
 games](../games/index.md).
@@ -19,13 +19,13 @@ table](#resdiary).
 
 ## I want to play!
 
-We'd love to have you play in our open mic evening!  There's no formal
-sign-up process: just arrive before 20:30 on a Thursday evening and
-let us know what you'd like to perform.  All performers get one free
-cocktail (or beer or glass of wine) and unlimited soft drinks.
+We'd love to have you play at our weekly open mic evening!  There's no
+formal sign-up process: just arrive before 20:30 on a Thursday evening
+and let us know what you'd like to perform.  All performers get one
+free cocktail (or beer or glass of wine) and unlimited soft drinks.
 
 We have a full drum kit and sound system, so there's no need to bring
-your own amps or mics: just turn up with yourself and your instrument
+your own amp or mic: just turn up with yourself and your instrument
 and we'll sort out the rest.
 
 ![Happy customers listening to music](images/snug.jpeg)
