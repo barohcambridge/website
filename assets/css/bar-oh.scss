@@ -471,53 +471,67 @@ a.button {
     background-color: rgba(var(--button-rgbv), 1.0);
 }
 
+/// Special effect: text rotator
+///
+/// Display list items by rotating each one into view in turn, with an
+/// opacity fade and a gentle swipe-up action.
+///
+/// CSS does not (currently) provide a direct mechanism for
+/// determining the index of a list item or the total number of list
+/// items, so we use a combination of nth-child-related tricks to
+/// construct these as variables for up to a fixed maximum total
+/// number of list items.
+///
+/// CSS does not allow variable names to be used within keyframe
+/// percentages, so we use SCSS to construct separate keyframe lists
+/// for each possible total number of list items.
+///
 ul.text-rotator {
+    // Fixed-size container for rotating text
+    --text-rotator-interval: 2s;
     position: relative;
     display: block;
     width: 100%;
     height: 5rem;
     padding: 0;
-    overflow: hidden;
-    --text-rotator-interval: 2s;
 }
-
 ul.text-rotator > li {
-    font: var(--font-head);
-    font-size: 2rem;
-    line-height: normal;
-    list-style-type: none;
+    // Rotating text item: centered both ways within container
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    font: var(--font-head);
+    font-size: 2rem;
     text-align: center;
     opacity: 0;
     animation:
 	calc(var(--text-rotator-interval) * var(--text-rotator-count))
 	ease-in-out
-	infinite
-    ;
+	infinite;
     animation-delay:
 	calc(var(--text-rotator-index) * var(--text-rotator-interval));
 }
-
 $text-rotator-max: 10;
 @for $i from 1 through $text-rotator-max {
+    // Animation rules for up to $text-rotator-max items in a list
     ul.text-rotator li:nth-child(#{$i}) {
+	// Construct item index
 	--text-rotator-index: #{$i - 1};
     }
     ul.text-rotator li:first-child:nth-last-child(#{$i}),
     ul.text-rotator li:first-child:nth-last-child(#{$i}) ~ li {
+	// Construct total item count and set corresponding animation name
 	--text-rotator-count: #{$i};
 	animation-name: text-rotator-#{$i};
     }
     @keyframes text-rotator-#{$i} {
-	0%    { opacity: 0; transform: translateY(.25em) scale(0.95); }
-	#{25/$i}%   { opacity: 1; transform: translateY(0)     scale(1); }
-	#{75/$i}%   { opacity: 1; transform: translateY(0)     scale(1); }
-	#{100/$i}%  { opacity: 0; transform: translateY(-.5em) scale(0.95); }
-	100%  { opacity: 0; }
+	// Animation covering 100%/$i of the total cycle
+	0%	   { opacity: 0; transform: translateY(0.25em) scale(0.95); }
+	#{25/$i}%  { opacity: 1; transform: translateY(0)      scale(1);    }
+	#{75/$i}%  { opacity: 1; transform: translateY(0)      scale(1);    }
+	#{100/$i}% { opacity: 0; transform: translateY(-0.5em) scale(0.95); }
     }
 }
 
