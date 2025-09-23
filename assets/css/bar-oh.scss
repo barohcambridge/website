@@ -11,40 +11,18 @@
     @return red($color), green($color), blue($color);
 }
 
-/// Box and text shadows with optional pulsing effect
+/// Global behaviour
 ///
-///  - apply box shadow wherever --box-shadow-rgbv is defined
+/// - smooth scrolling with top scroll margin for relative anchors
 ///
-///  - apply text shadow wherever --text-shadow-rgbv is defined
+/// - sane box sizing
 ///
-///  - apply drop shadow wherever --drop-shadow-rgbv is defined
-///
-///  - if .pulse class is applied, animate the defined shadow(s)
-///
+html {
+    scroll-behavior: smooth;
+}
 * {
-    --box-shadow-rgbv: initial;
-    --text-shadow-rgbv: initial;
-    --drop-shadow-rgbv: initial;
-    box-shadow:
-	0 0 1rem 0.7rem rgba(var(--box-shadow-rgbv), 0.5);
-    text-shadow:
-	0 0 4px rgba(var(--text-shadow-rgbv), 0.9);
-    filter: drop-shadow(0 0 4px rgba(var(--drop-shadow-rgbv), 0.9));
-}
-@keyframes pulse {
-    50% {
-	box-shadow:
-	    0 0 48px 28px rgba(var(--box-shadow-rgbv), 0.8);
-	text-shadow:
-	    0 0 4px rgba(var(--text-shadow-rgbv), 0.6),
-	    0 0 12px rgba(var(--text-shadow-rgbv), 0.9);
-	filter:
-	    drop-shadow(0 0 4px rgba(var(--drop-shadow-rgbv), 0.6)),
-	    drop-shadow(0 0 12px rgba(var(--drop-shadow-rgbv), 0.9));
-    }
-}
-.pulse {
-    animation: pulse 2s ease-in-out infinite;
+    scroll-margin-top: 1rem;
+    box-sizing: border-box;
 }
 
 /// Grid layout
@@ -217,9 +195,14 @@ body > nav {
 	"Special Elite", var(--font-monospace-slab-serif);
 }
 
-/// Typography
+/// Basic typography
+///
+/// - two font families (body text and headings)
+///
+/// - dark mode colours to match overall dark appearance
 ///
 html {
+    // Basic body text
     font: var(--font-body);
     color: rgb(192, 200, 208);
     background-color: black;
@@ -227,24 +210,76 @@ html {
     text-underline-offset: 0.125em;
 }
 h1, h2, h3, h4, h5, h6 {
+    // All headings centered and in heading font
     font: var(--font-head);
     text-align: center;
     text-wrap: balance;
     color: rgb(240, 240, 240);
 }
 h1 {
+    // Page heading
     font-size: 3rem;
 }
 h2 {
+    // Section headings
     font-size: 1.8rem;
 }
 address {
+    // Do not use italics for addresses
     font-style: normal;
 }
 article {
+    // Approximate appearance of a sheet of paper
     padding: 1rem 2rem;
     color: rgb(32, 32, 32);
     background-color: beige;
+}
+img {
+    // Keep aspect ratio, use histogram colours as background if defined
+    display: block;
+    width: auto;
+    height: auto;
+    background: linear-gradient(var(--img-colors));
+}
+
+/// Tables
+///
+/// - dark background to match overall dark appearance
+///
+/// - lines between rows (not columns)
+///
+/// - hidden header row if empty (since cannot be omitted in Markdown)
+///
+table {
+    // Dark background, no borders by default
+    background-color: rgb(19, 23, 31);
+    border-spacing: 0;
+}
+thead > tr:not(:has(th:not(:empty))) {
+    // Hidden header row if empty
+    display: none;
+}
+tbody > tr:last-child > td {
+    // Hide border underneath final row
+    border-bottom: none;
+}
+td {
+    // Line between rows
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid rgb(64, 64, 64);
+}
+td:first-child {
+    // Extra padding to left of first column (with border extending to edge)
+    padding-left: 0.8rem;
+}
+td:last-child {
+    // Extra padding to right of last column (with border extending to edge)
+    padding-right: 0.8rem;
+}
+td > a {
+    // Force links to wrap as a complete unit
+    white-space: nowrap;
 }
 
 /// Link highlighting
@@ -280,18 +315,6 @@ a:active {
     --text-shadow-rgbv: var(--link-active-shadow-rgbv);
 }
 
-h1 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-* {
-    box-sizing: border-box;
-}
-
 /// Nav controls
 ///
 a#nav {
@@ -325,7 +348,7 @@ nav a {
     // Menu links
     --link-rgbv: #{rgbv(white)};
     --link-hover-rgbv: #{rgbv(white)};
-    --link-hover-shadow-rgbv: #{rgbv(rgb(255,224,224))};
+    --link-hover-shadow-rgbv: #{rgbv(rgb(255, 224, 224))};
     --link-underline-opacity: 0;
     display: block;
     padding: 0;
@@ -340,8 +363,6 @@ nav img {
     // Occupy at most 25% of the viewport, grow/shrink smoothly
     max-width: 50%;
     max-height: 25vh;
-    width: auto;
-    height: auto;
     margin: 0.5rem auto 1rem;
     transition:
 	max-height 0.3s ease,
@@ -356,8 +377,16 @@ nav img:active {
     --drop-shadow-rgbv: #{rgbv(rgb(255, 0, 0))};
 }
 
-
-body > header > img {
+/// Page header
+///
+/// - image placed behind text
+///
+/// - image darkened and faded out towards main body
+///
+/// - text shadow to increase legibility against image
+///
+header > img {
+    // Full width, masked, centered, truncated top and bottom
     position: absolute;
     width: 100%;
     height: 100%;
@@ -365,105 +394,108 @@ body > header > img {
     object-position: center;
     mask-image: linear-gradient(
 	to bottom,
-	rgba(0,0,0,1),
-	rgba(0,0,0,0.6) 40%,
-	rgba(0,0,0,0.4) 80%,
-	rgba(0,0,0,0)
+	rgba(0, 0, 0, 1),
+	rgba(0, 0, 0, 0.6) 40%,
+	rgba(0, 0, 0, 0.4) 80%,
+	rgba(0, 0, 0, 0)
     );
 }
-
-body > header > * {
+header > * {
+    // Placed in front of image, apply text shadow for contrast
     position: relative;
     text-shadow:
-	0 0 4px rgba(0,0,0,0.6),
-	0 0 12px rgba(0,0,0,0.9);
+	0 0 4px rgba(0, 0, 0, 0.6),
+	0 0 12px rgba(0, 0, 0, 0.9);
 }
 
-body > main > * {
+/// Main body
+///
+/// - width limited on larger screens
+///
+/// - child blocks are full width
+///
+/// - glow boxes
+///
+main > * {
+    // Width limited based on text size
     max-width: calc(min(32rem, 100%));
+    width: 100%;
     margin: 1rem auto;
-    scroll-margin-top: 1rem;
 }
-
-
-thead tr:not(:has(th:not(:empty))) {
-  display: none;
-}
-
-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-table {
-    background-color: rgb(19, 23, 31);
-    border-spacing: 0;
-}
-
-td {
-    padding: 0.5rem;
-    border: none;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color: rgb(64,64,64);
-}
-td:first-child {
-    padding-left: 0.8rem;
-}
-td:last-child {
-    padding-right: 0.8rem;
-}
-
-td > a {
-    white-space: nowrap;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-}
-
 main > iframe,
 main > img,
 main > table,
 main > article {
+    // Block elements with rounded corners and box shadow
     display: block;
     margin: 2rem auto;
     border-radius: 1rem;
     overflow: hidden;
 }
-
 main > table {
+    // Tables
     --box-shadow-rgbv: #{rgbv(white)};
     display: table;
-    width: 100%;
 }
-
+main > article {
+    // Embedded articles
+    --box-shadow-rgbv: #{rgbv(grey)};
+}
 main > img {
+    // Images: red box shadow (since photos generally contain a lot of red)
     --box-shadow-rgbv: #{rgbv(red)};
-    background: linear-gradient(var(--img-colors));
 }
-
 main > iframe.googlemap {
+    // Google map: 75% of viewport height since is often last anchor in a page
     --box-shadow-rgbv: #{rgbv(aqua)};
     height: 75vh;
 }
-
 main > iframe.resdiary {
+    // Booking widget: force background colour to match that of widget
     background-color: white;
     --box-shadow-rgbv: #{rgbv(blue)};
 }
-
 main > iframe.youtube {
+    // YouTube video: force aspect ratio to 16:9 as expected by widget
     aspect-ratio: 16 / 9;
     height: auto;
     --box-shadow-rgbv: #{rgbv(yellow)};
 }
 
-main > article {
-    --box-shadow-rgbv: #{rgbv(lightgrey)};
+/// Special effect: box and text shadows with optional pulsing
+///
+/// - apply box shadow wherever --box-shadow-rgbv is defined
+///
+/// - apply text shadow wherever --text-shadow-rgbv is defined
+///
+/// - apply drop shadow wherever --drop-shadow-rgbv is defined
+///
+/// - if .pulse class is applied, animate the defined shadow(s)
+///
+* {
+    --box-shadow-rgbv: initial;
+    --text-shadow-rgbv: initial;
+    --drop-shadow-rgbv: initial;
+    box-shadow:
+	0 0 1rem 0.7rem rgba(var(--box-shadow-rgbv), 0.5);
+    text-shadow:
+	0 0 4px rgba(var(--text-shadow-rgbv), 0.9);
+    filter: drop-shadow(0 0 4px rgba(var(--drop-shadow-rgbv), 0.9));
+}
+@keyframes pulse {
+    50% {
+	box-shadow:
+	    0 0 48px 28px rgba(var(--box-shadow-rgbv), 0.8);
+	text-shadow:
+	    0 0 4px rgba(var(--text-shadow-rgbv), 0.6),
+	    0 0 12px rgba(var(--text-shadow-rgbv), 0.9);
+	filter:
+	    drop-shadow(0 0 4px rgba(var(--drop-shadow-rgbv), 0.6)),
+	    drop-shadow(0 0 12px rgba(var(--drop-shadow-rgbv), 0.9));
+    }
+}
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
 }
 
 /// Special effect: text rotator
