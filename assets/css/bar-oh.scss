@@ -17,15 +17,19 @@
 ///
 ///  - apply text shadow wherever --text-shadow-rgbv is defined
 ///
+///  - apply drop shadow wherever --drop-shadow-rgbv is defined
+///
 ///  - if .pulse class is applied, animate the defined shadow(s)
 ///
 * {
     --box-shadow-rgbv: initial;
     --text-shadow-rgbv: initial;
+    --drop-shadow-rgbv: initial;
     box-shadow:
 	0 0 48px 20px rgba(var(--box-shadow-rgbv), 0.5);
     text-shadow:
 	0 0 4px rgba(var(--text-shadow-rgbv), 0.9);
+    filter: drop-shadow(0 0 4px rgba(var(--drop-shadow-rgbv), 0.9));
 }
 @keyframes pulse {
     50% {
@@ -34,6 +38,9 @@
 	text-shadow:
 	    0 0 4px rgba(var(--text-shadow-rgbv), 0.6),
 	    0 0 12px rgba(var(--text-shadow-rgbv), 0.9);
+	filter:
+	    drop-shadow(0 0 4px rgba(var(--drop-shadow-rgbv), 0.6)),
+	    drop-shadow(0 0 12px rgba(var(--drop-shadow-rgbv), 0.9));
     }
 }
 .pulse {
@@ -258,10 +265,16 @@ body > nav {
 nav img {
     max-width: 50%;
     max-height: 20vh;
-    transition: max-height 0.3s ease;
     width: auto;
     height: auto;
     margin: 0.2rem auto;
+    transition:
+	max-height 0.3s ease,
+	filter 0.5s ease;
+}
+
+nav img:hover {
+    --drop-shadow-rgbv: #{rgbv(rgb(192, 0, 0))};
 }
 
 nav ul, nav li {
