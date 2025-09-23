@@ -265,8 +265,23 @@ body > nav {
     text-align: center;
 }
 
-.nav-label {
+/// Nav controls
+///
+a#nav {
+    // Zero-height link target
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.nav-label, .nav-link {
+    // Nav control symbol (as label or as link)
+    padding: 1rem;
+    margin: 0 auto;
+    text-align: center;
     font: var(--font-head);
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
 }
 
 nav img {
