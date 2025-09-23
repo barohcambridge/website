@@ -111,17 +111,25 @@ body > footer {
 	// Nav: zero-height and invisible by default
 	position: static;
 	max-height: 0;
+	transition: max-height 0.3s ease;
+    }
+    body > nav > * {
+	// Nav elements (excluding control itself): transparent by default
 	opacity: 0;
-	transition: max-height 0.3s ease, opacity 0.8s ease;
+	transition: opacity 0.8s ease;
     }
     body:has(#nav-checkbox:checked) > nav {
 	// Nav: full viewport height when opened
 	max-height: 100vh;
+    }
+    body:has(#nav-checkbox:checked) > nav > * {
+	// Nav elements: fade in when opened
 	opacity: 1;
     }
     .nav-label {
 	// Nav controls visible by default
 	display: block;
+	opacity: 1;
     }
     body:has(#nav-checkbox:checked) > header .nav-label {
 	// Hide header nav label while nav is open
