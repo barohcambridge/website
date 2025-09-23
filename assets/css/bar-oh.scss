@@ -221,20 +221,17 @@ a {
     text-decoration-line: underline;
     text-decoration-thickness: 1px;
     transition:
-	color 0.1s ease,
-	text-decoration-color 0.1s ease,
-	text-decoration-thickness 0.1s ease,
-	text-shadow 0.1s ease;
+	color 0.2s ease-in-out,
+	text-decoration-color 0.2s ease-in-out,
+	text-shadow 0.2s ease-in-out;
 }
 a:hover, a:focus-visible {
     --link-rgbv: #{rgbv(rgb(255, 168, 168))};
     --text-shadow-rgbv: #{rgbv(rgb(255, 128, 128))};
-    text-decoration-thickness: 2px;
 }
 a:active {
     --link-rgbv: #{rgbv(rgb(255, 192, 192))};
     --text-shadow-rgbv: #{rgbv(rgb(255, 168, 168))};
-    text-decoration-thickness: 2px;
 }
 
 h1 {
@@ -297,21 +294,17 @@ nav a {
     margin: 0.2rem auto;
     padding: 0;
     width: 100%;
-    text-decoration-line: none;
-    text-decoration-thickness: 0px;
+    text-decoration-color: rgba(var(--link-rgbv), 0);
     text-underline-offset: 0.175em;
 }
 nav a:hover, nav a:focus-visible {
     --link-rgbv: #{rgbv(white)};
     --text-shadow-rgbv: #{rgbv(rgb(255,224,224))};
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(var(--link-rgbv), 1);
 }
 nav a:active {
     --link-rgbv: #{rgbv(rgb(255, 192, 192))};
     --text-shadow-rgbv: #{rgbv(rgb(255, 168, 168))};
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
 }
 
 body > header > img {
