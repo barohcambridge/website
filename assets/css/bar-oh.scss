@@ -26,7 +26,7 @@
     --text-shadow-rgbv: initial;
     --drop-shadow-rgbv: initial;
     box-shadow:
-	0 0 48px 20px rgba(var(--box-shadow-rgbv), 0.5);
+	0 0 1rem 0.7rem rgba(var(--box-shadow-rgbv), 0.5);
     text-shadow:
 	0 0 4px rgba(var(--text-shadow-rgbv), 0.9);
     filter: drop-shadow(0 0 4px rgba(var(--drop-shadow-rgbv), 0.9));
@@ -273,8 +273,8 @@ a:active {
 }
 
 h1 {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 html {
@@ -371,7 +371,7 @@ body > header > * {
 
 body > main > * {
     max-width: calc(min(32rem, 100%));
-    margin: 2rem auto;
+    margin: 1rem auto;
     scroll-margin-top: 1rem;
 }
 
@@ -428,6 +428,7 @@ main > table {
     display: block;
     overflow: hidden;
     border-radius: 1rem;
+    margin: 2rem auto;
 }
 
 main > table {
