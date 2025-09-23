@@ -446,20 +446,48 @@ main > img {
     --box-shadow-rgbv: #{rgbv(red)};
 }
 main > iframe.googlemap {
-    // Google map: 75% of viewport height since is often last anchor in a page
+    // Google map widget
+    //
+    // - 75% of viewport height since is often last anchor in a page
+    //
+    // - background radial gradient chosen to mimic a blurred map while loading
+    //
     --box-shadow-rgbv: #{rgbv(aqua)};
     height: 75vh;
+    background: radial-gradient(
+	circle at center,
+	#b31412,
+	#ea4335 5%,
+	#f8f0de 10%,
+	#f6f5f5 30%,
+	#c3f1d5 60%,
+	#90daee 90%,
+    );
 }
 main > iframe.resdiary {
-    // Booking widget: force background colour to match that of widget
-    background-color: white;
+    // Booking widget
+    //
+    // - force background colour to match that of ResDiary widget
+    //
     --box-shadow-rgbv: #{rgbv(blue)};
+    background-color: white;
 }
 main > iframe.youtube {
-    // YouTube video: force aspect ratio to 16:9 as expected by widget
+    // YouTube video widget
+    //
+    // - force aspect ratio to 16:9 as expected by YouTube
+    //
+    // - representative video colours for background gradient while loading
+    //
+    --box-shadow-rgbv: #{rgbv(yellow)};
     aspect-ratio: 16 / 9;
     height: auto;
-    --box-shadow-rgbv: #{rgbv(yellow)};
+    background: linear-gradient(
+	#f0efca,
+	#dc1ec5,
+	#2e7fe1,
+	#0e0d13,
+    );
 }
 
 /// Special effect: box and text shadows with optional pulsing
