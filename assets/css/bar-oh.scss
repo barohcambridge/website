@@ -459,13 +459,14 @@ main > iframe.youtube {
 }
 
 a.button {
+    --link-rgbv: #{rgbv(white)};
     --button-rgbv: #{rgbv(red)};
     --box-shadow-rgbv: var(--button-rgbv);
     margin: 2rem auto;
     width: fit-content;
     font: var(--font-head);
+    font-size: 1.5rem;
     text-align: center;
-    color: white;
     padding: 1rem;
     background-color: rgba(var(--button-rgbv), 1.0);
 }
