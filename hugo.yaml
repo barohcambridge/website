@@ -1,5 +1,6 @@
 languageCode: "en-gb"
 title: "Bar -OH"
+enableGitInfo: true
 
 markup:
   goldmark:

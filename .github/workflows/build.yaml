@@ -22,6 +22,8 @@ jobs:
 
       - name: Check out code
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: List LFS objects
         run: |
@@ -70,6 +72,9 @@ jobs:
           sudo chgrp -R $HUGOGROUP $HUGODIRS
           sudo chmod -R g+w $HUGODIRS
           ls -ld $HUGODIRS
+          mkdir -p ${{ runner.temp }}/_github_home
+          git config --file ${{ runner.temp }}/_github_home/.gitconfig \
+              --add safe.directory /github/workspace
 
       - name: Build
         uses: docker://ghcr.io/gohugoio/hugo
