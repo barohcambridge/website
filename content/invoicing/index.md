@@ -1,5 +1,7 @@
 ---
 noindex: true
+sitemap:
+  disable: true
 ---
 
 # Invoicing
