@@ -1,3 +1,9 @@
+---
+description: >-
+  Wii, N64, GameCube, PlayStation, Xbox, and many other retro
+  consoles.  All free to play for as long as you like!
+---
+
 # Games
 
 ## Retro consoles { #consoles }

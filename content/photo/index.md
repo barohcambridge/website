@@ -2,6 +2,8 @@
 aliases:
   - "photos"
   - "print"
+description: >-
+  Print any picture you like on top of your cocktail!
 ---
 
 # Photos

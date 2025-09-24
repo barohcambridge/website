@@ -2,6 +2,8 @@
 noindex: true
 sitemap:
   disable: true
+description: >-
+  How to invoice for your performance or hero shift
 ---
 
 # Invoicing

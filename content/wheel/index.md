@@ -1,3 +1,8 @@
+---
+description: >-
+  Arrive on time and spin the Wheel of Punctuality to win a prize!
+---
+
 # Wheel of Punctuality
 
 * Tequila shots

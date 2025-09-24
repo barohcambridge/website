@@ -1,3 +1,8 @@
+---
+description: >-
+  Open mic evening every Thursday with free drinks for performers
+---
+
 # Thursday
 
 ## "-OHpen Mic"

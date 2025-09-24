@@ -1,6 +1,8 @@
 ---
 aliases:
   - "pnp"
+description: >-
+  Group jam session every Tuesday with free drinks for performers
 ---
 
 # Tuesday

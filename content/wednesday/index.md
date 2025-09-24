@@ -1,3 +1,9 @@
+---
+description: >-
+  Keyboard lounge music session every Wednesday with Bryan, our
+  resident bartender/pianist
+---
+
 # Wednesday
 
 ## "Keys With Bryan"

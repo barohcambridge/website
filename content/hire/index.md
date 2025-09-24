@@ -1,3 +1,8 @@
+---
+description: >-
+  Host your own private celebration at Bar -OH
+---
+
 # Venue hire
 
 Bar -OH is a great place to hold your birthday party, Christmas party,
