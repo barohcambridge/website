@@ -185,13 +185,15 @@ body > nav {
 	monospace;
     // Body text: Inter (or generic Neo Grotesque)
     --font-size-body: clamp(1rem, 0.8vw + 0.8rem, 2rem);
+    --line-height-body: 1.4;
     --font-body:
-	var(--font-size-body)/1.4
+	var(--font-size-body)/var(--line-height-body)
 	"Inter", var(--font-neo-grotesque);
     // Headings: Special Elite (or generic Monospace Slab Serif)
     --font-size-head: 1.2rem;
+    --line-height-head: 1.25;
     --font-head:
-	var(--font-size-head)/1.25
+	var(--font-size-head)/var(--line-height-head)
 	"Special Elite", var(--font-monospace-slab-serif);
 }
 
@@ -341,6 +343,20 @@ nav p, nav ul, nav li {
     display: block;
     padding: 0;
     margin: 0;
+}
+nav ul {
+    // Calculate (unclamped) vertical spacing
+    --nav-max-items: 8;
+    --nav-max-height: 70vh;
+    --nav-item-height:
+	calc(var(--nav-max-height) / var(--nav-max-items));
+    --nav-item-text-height:
+	calc(1em * var(--line-height-head));
+    --nav-item-space-height:
+	calc(var(--nav-item-height) - var(--nav-item-text-height));
+    --nav-item-margin: 0.5rem;
+    --nav-item-padding:
+	calc((var(--nav-item-space-height) - var(--nav-item-margin)) / 2);
     font: var(--font-head);
     text-align: center;
 }
@@ -351,15 +367,16 @@ nav li a {
     --link-hover-shadow-rgbv: #{rgbv(rgb(255, 224, 224))};
     --link-underline-opacity: 0;
     display: block;
-    padding: calc(clamp(0px, 2.5vh - 0.4em, 0.3em)) 0;
-    margin: 0.5rem auto;
+    padding: clamp(0px, var(--nav-item-padding), 0.3em) 0;
+    margin: var(--nav-item-margin) auto;
     width: 100%;
     text-underline-offset: 0.175em;
 }
 @media(max-width: 800px) {
     // Mobile version
-    nav p, nav ul, nav li {
+    nav ul {
 	// Aim to use most of the available screen width for menu text
+	--nav-max-height: 60vh;
 	font-size: clamp(var(--font-size-head), calc(min(10vw, 4vh)), 2rem);
     }
 }
@@ -382,6 +399,13 @@ nav img:hover, nav img:focus-visible {
 nav img:active {
     // Glow brighter on activation
     --drop-shadow-rgbv: #{rgbv(rgb(255, 0, 0))};
+}
+@media(max-width: 800px) {
+    // Mobile version
+    nav img {
+	// Limit logo height
+	max-height: 20vh;
+    }
 }
 
 /// Page header
