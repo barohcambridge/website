@@ -344,14 +344,14 @@ nav p, nav ul, nav li {
     font: var(--font-head);
     text-align: center;
 }
-nav a {
+nav li a {
     // Menu links
     --link-rgbv: #{rgbv(white)};
     --link-hover-rgbv: #{rgbv(white)};
     --link-hover-shadow-rgbv: #{rgbv(rgb(255, 224, 224))};
     --link-underline-opacity: 0;
     display: block;
-    padding: 0;
+    padding: calc(clamp(0px, 2.5vh - 0.4em, 0.3em)) 0;
     margin: 0.5rem auto;
     width: 100%;
     text-underline-offset: 0.175em;
