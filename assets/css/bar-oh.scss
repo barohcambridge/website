@@ -360,7 +360,7 @@ nav li a {
     // Mobile version
     nav p, nav ul, nav li {
 	// Aim to use most of the available screen width for menu text
-	font-size: 10vw;
+	font-size: clamp(var(--font-size-head), calc(min(10vw, 4vh)), 2rem);
     }
 }
 
