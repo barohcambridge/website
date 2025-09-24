@@ -356,6 +356,13 @@ nav li a {
     width: 100%;
     text-underline-offset: 0.175em;
 }
+@media(max-width: 800px) {
+    // Mobile version
+    nav p, nav ul, nav li {
+	// Aim to use most of the available screen width for menu text
+	font-size: 10vw;
+    }
+}
 
 /// Nav logo
 ///
