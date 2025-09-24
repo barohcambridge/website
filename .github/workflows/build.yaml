@@ -79,6 +79,7 @@ jobs:
       - name: Build
         uses: docker://ghcr.io/gohugoio/hugo
         env:
+          HUGO_ENVIRONMENT: ${{ vars.HUGO_ENVIRONMENT }}
           HUGO_GOOGLE_MAPS_API_KEY: ${{ secrets.HUGO_GOOGLE_MAPS_API_KEY }}
         with:
           args: |

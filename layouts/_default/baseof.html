@@ -11,7 +11,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark">
-    {{- if .Page.Params.noindex -}}
+    {{- if ne hugo.Environment "production" -}}
+      <meta name="robots" content="noindex, nofollow">
+    {{- else if .Page.Params.noindex -}}
       <meta name="robots" content="noindex">
     {{- end -}}
     <meta name="description" content="{{ $description }}">
