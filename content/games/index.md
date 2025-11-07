@@ -12,9 +12,9 @@ We have a huge number of old retro consoles: Wii, N64, GameCube, many
 generations of Sony PlayStation, Xbox 360, and many more.  All of our
 consoles are free for you to play for as long as you like!
 
-![Mario Kart](images/mariokart.jpeg)
+![Mortal Kombat](images/mortalkombat.jpeg)
 
-![Sonic](images/sonic.jpeg)
+![Mario Kart](images/mariokart.jpeg)
 
 Rock out with your friends on our Guitar Hero sofa.  We have guitars
 and a DJ deck, and a couple of real guitar amps hooked up to the Xbox
