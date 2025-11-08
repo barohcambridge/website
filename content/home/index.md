@@ -28,7 +28,7 @@ We also have plenty of [retro consoles](../games/index.md) and [board
 games](../games/index.md#boardgames) that are completely free for you
 to play while you enjoy your dramatically served cocktails.
 
-![Bar -OH full of people](images/crowd.jpeg)
+![Happy customers listening to music](images/snug.jpeg)
 
 We are open every night of the week for all your imbibing and gaming
 needs.  Live music lovers may be lucky enough to be serenaded by our
