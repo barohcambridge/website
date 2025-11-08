@@ -6,9 +6,10 @@ description: >-
 # Venue hire
 
 Bar -OH is a great place to hold your birthday party, Christmas party,
-launch party, or any other corporate event!  Unlike most other venues,
-we don't charge you anything just to hire the space or to use our
-games consoles: you pay only for your drinks while you're here.
+launch party, or any other celebratory or corporate event!  Unlike
+most other venues, we don't charge you anything just to hire the space
+or to use our games consoles: you pay only for your drinks while
+you're here.
 
 ## Where will we be?
 
@@ -16,7 +17,7 @@ For groups of 40 or more people, you will have a private area all to
 yourself on our ground floor.  Nobody else will need to pass through
 your area, so you can enjoy your evening undisturbed.
 
-## What do we get?
+## What will we get?
 
 You'll get free and exclusive use of all of the [retro consoles and
 board games](../games/index.md) in your area for the whole evening.

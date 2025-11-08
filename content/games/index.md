@@ -27,7 +27,7 @@ pedal sets ready for head-to-head action!
 
 ![Driving](images/driving.jpeg)
 
-For a true arcade feel try out our gaming table, with old classics
+For a true arcade feel, try out our gaming table, with old classics
 such as Pac-Man and Space Invaders.
 
 ![Pac-Man](images/pacman.jpeg)
@@ -37,7 +37,7 @@ such as Pac-Man and Space Invaders.
 We have plenty of board games dotted around the venue that you're
 welcome to grab and play while you drink.  As with our collection of
 [retro consoles](#consoles), all of our board games are free for you
-to use so please help yourself!
+to use, so please help yourself!
 
 ![Cards Against Humanity](images/cardsagainsthumanity.jpeg)
 
