@@ -14,7 +14,7 @@ play your heart out, or just sit back and watch the fun while you
 enjoy our [cocktails](../menu/index.md) and [assorted
 games](../games/index.md).
 
-{{< youtube videoId="t7-vHdrdigU" title="-OHpen Mic" >}}
+{{< youtube videoId="K7KjEi9-uXQ" title="-OHpen Mic" >}}
 
 ## I want to watch!
 

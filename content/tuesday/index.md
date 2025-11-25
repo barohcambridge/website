@@ -15,7 +15,7 @@ On Tuesdays we host our jam sessions.  Staff and regulars get up on
 stage and jam together for as long as the mood takes them.  Turn up,
 plug in, and play along!
 
-{{< youtube videoId="G2hkNb8mQGY" title="Plug & Play" >}}
+{{< youtube videoId="Tvrih1GCOzU" title="Plug & Play" >}}
 
 ## I want to play my own set!
 
