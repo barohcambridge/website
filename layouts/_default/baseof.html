@@ -35,6 +35,15 @@
     {{- $logo := resources.Get "images/logo.png" -}}
     {{ partial "icons.html" (dict "icon" $logo) }}
     <title>{{ $title }}</title>
+    <script async
+	    src="https://www.googletagmanager.com/gtag/js?id=AW-11158280218">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11158280218');
+    </script>
   </head>
   <body>
     {{- partial "nav.html" . -}}
