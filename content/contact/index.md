@@ -4,13 +4,13 @@
 
 You can email us at enquiries@bar-oh.com.  We try to respond to emails
 within two working days.  For instant bookings, please use our
-[booking form](#resdiary) instead.
+[booking form](#booknow) instead.
 
 ## Phone
 
 You can contact us by telephone during our opening hours on
 [01223 319420](tel:+441223319420).  For instant bookings, please use
-our [booking form](#resdiary) instead.
+our [booking form](#booknow) instead.
 
 ## Venue hire
 
@@ -19,12 +19,12 @@ hire](../hire/index.md) page.
 
 ## Booking
 
-You can use the form below to make an [instant booking](#resdiary) for
+You can use the form below to make an [instant booking](#booknow) for
 any group size.  Very large groups may be asked to pay a deposit to
 secure the table: any deposit paid will be fully deducted from your
 final bill for the evening.
 
-{{< resdiary >}}
+{{< booknow >}}
 
 ## Address
 

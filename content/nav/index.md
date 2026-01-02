@@ -7,7 +7,7 @@ headless: true
 * [Home](../home/index.md)
 * [Menu](../menu/index.md)
 * [Games](../games/index.md)
-* [Book now](../home/index.md#resdiary)
+* [Book now](../home/index.md#booknow)
 * [Opening hours](../home/index.md#opening)
 * [Venue hire](../hire/index.md)
 * [Find us](../home/index.md#googlemap)

@@ -46,11 +46,11 @@ in-house band or guest performers.
 { #opening }
 
 You're very welcome to just turn up at our door!  But if you'd like to
-guarantee yourself a space, please do [make a booking](#resdiary).
+guarantee yourself a space, please do [make a booking](#booknow).
 (And if you arrive on time, you'll get an extra special
 [treat!](../wheel/index.md))
 
-{{< resdiary >}}
+{{< booknow >}}
 
 You'll find us at 20 Downing Street, next to the entrance of the
 Hilton Hotel.  Hope to see you soon!

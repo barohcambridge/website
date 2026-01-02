@@ -57,7 +57,7 @@ low-alcohol or no-alcohol version.
 
 ![Elements](images/menu/elements.png)
 
-Like what you see here?  [Book a table](#resdiary) and visit us in
+Like what you see here?  [Book a table](#booknow) and visit us in
 person!
 
-{{< resdiary >}}
+{{< booknow >}}
