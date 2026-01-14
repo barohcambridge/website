@@ -1,17 +1,18 @@
 ---
 aliases:
   - "pnp"
+  - "tuesday"
 description: >-
-  Group jam session every Tuesday with free drinks for performers
+  Group jam session every Sunday with free drinks for performers
 ---
 
-# Tuesday
+# Sunday
 
 ## "Plug & Play"
 
 ![Plug & Play in session](images/plugandplay.jpeg)
 
-On Tuesdays we host our jam sessions.  Staff and regulars get up on
+On Sundays we host our jam sessions.  Staff and regulars get up on
 stage and jam together for as long as the mood takes them.  Turn up,
 plug in, and play along!
 
@@ -19,14 +20,14 @@ plug in, and play along!
 
 ## I want to play my own set!
 
-Tuesdays at Bar -OH are all about playing together.  But
-we do also host a regular [open mic](../thursday/index.md) session on
-Thursdays, which is the perfect place to try our your own solo act.
+Sundays at Bar -OH are all about playing together.  But we do also
+host a regular [open mic](../thursday/index.md) session on Thursdays,
+which is the perfect place to try our your own solo act.
 
 ## I want to play with you!
 
 Experienced musicians are very welcome to join in the jam session.
-Arrive before 20:30 on a Tuesday evening and let us know that you'd
+Arrive before 20:30 on a Sunday evening and let us know that you'd
 like to take part.  All performers get one free cocktail (or beer or
 glass of wine) and unlimited soft drinks.
 
