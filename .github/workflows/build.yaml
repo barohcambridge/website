@@ -18,10 +18,10 @@ jobs:
 
       - name: Setup GitHub Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Check out code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -36,7 +36,7 @@ jobs:
           echo "key=${{ vars.LFS_CACHE_KEY }}-$hash" >> "$GITHUB_OUTPUT"
 
       - name: Cache LFS objects
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .git/lfs
           key: ${{ steps.lfshash.outputs.key }}
@@ -53,7 +53,7 @@ jobs:
 
       - name: Restore cached resources
         id: hugocache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: resources
           key: ${{ vars.HUGO_CACHE_KEY }}-
@@ -93,7 +93,7 @@ jobs:
           echo "key=${{ vars.HUGO_CACHE_KEY }}-$hash" >> "$GITHUB_OUTPUT"
 
       - name: Save cached resources
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         if: >-
           ${{ steps.hugocache.outputs.cache-matched-key !=
               steps.hugohash.outputs.key }}
@@ -102,7 +102,7 @@ jobs:
           key: ${{ steps.hugohash.outputs.key }}
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
@@ -119,4 +119,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
