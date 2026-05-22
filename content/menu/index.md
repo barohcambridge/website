@@ -41,9 +41,9 @@ low-alcohol or no-alcohol version.
 
 ![Decadent Cocktails](images/menu/decadent.png)
 
-##### { #xmas }
+##### { #frozen }
 
-![Christmas](images/menu/xmas.png)
+![Frozen](images/menu/frozen.png)
 
 ##### { #beer }
 
