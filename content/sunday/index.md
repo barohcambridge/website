@@ -21,7 +21,7 @@ plug in, and play along!
 ## I want to play my own set!
 
 Sundays at Bar -OH are all about playing together.  But we do also
-host a regular [open mic](../thursday/index.md) session on Thursdays,
+host a regular [open mic](../monday/index.md) session on Mondays,
 which is the perfect place to try our your own solo act.
 
 ## I want to play with you!
