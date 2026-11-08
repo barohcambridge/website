@@ -12,6 +12,8 @@ description: >-
 
 ![Plug & Play in session](images/plugandplay.jpeg)
 
+**ON HOLD UNTIL JANUARY 2027**
+
 On Sundays we host our jam sessions.  Staff and regulars get up on
 stage and jam together for as long as the mood takes them.  Turn up,
 plug in, and play along!

@@ -42,7 +42,7 @@ in-house band or guest performers.
 | Thursday                                           | 16:00 ‑ 01:00 |
 | Friday                                             | 16:00 ‑ 01:00 |
 | Saturday                                           | 16:00 ‑ 01:00 |
-| Sunday [Plug and Play](../sunday/index.md)         | 16:00 ‑ 01:00 |
+| Sunday                                             | 16:00 ‑ 01:00 |
 { #opening }
 
 You're very welcome to just turn up at our door!  But if you'd like to
